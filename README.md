@@ -1,6 +1,5 @@
-# Country Data
+# Country List
 
-[![Build Status](https://travis-ci.org/OpenBookPrices/country-data.png)](https://travis-ci.org/OpenBookPrices/country-data)
 
 There are lots of little bits of data that you often need relating to countries,
 and I couldn't find any easy to use source of it. So I compiled it all here.
@@ -160,7 +159,7 @@ These are the steps required:
 
 ``` bash
 # Clone the repo (or better your fork of it)
-git clone https://github.com/OpenBookPrices/country-data.git
+git clone https://github.com/Sonatrix/country-list.git
 cd country-data
 
 # install the dependencies
