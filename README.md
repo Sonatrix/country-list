@@ -68,18 +68,18 @@ To make finding easier there are utility methods that can search the countries a
 ## Installing
 
 ``` bash
-npm install country-data
+npm install country-data-list
 ```
 
 
 ## Example usage
 
 ``` javascript
-var countries        = require('country-data').countries,
-    currencies       = require('country-data').currencies,
-    regions          = require('country-data').regions,
-    languages        = require('country-data').languages,
-    callingCountries = require('country-data').callingCountries;
+var countries        = require('country-data-list').countries,
+    currencies       = require('country-data-list').currencies,
+    regions          = require('country-data-list').regions,
+    languages        = require('country-data-list').languages,
+    callingCountries = require('country-data-list').callingCountries;
 
 // .all gives you an array of all entries
 console.log( countries.all );
@@ -99,7 +99,7 @@ console.log( regions.europe.countries )
 ```
 
 ``` javascript
-var lookup = require('country-data').lookup;
+var lookup = require('country-data-list').lookup;
 
 // Match a value (grab first from array)
 var france = lookup.countries({name: 'France'})[0];
@@ -160,7 +160,7 @@ These are the steps required:
 ``` bash
 # Clone the repo (or better your fork of it)
 git clone https://github.com/Sonatrix/country-list.git
-cd country-data
+cd country-list
 
 # install the dependencies
 npm install .
