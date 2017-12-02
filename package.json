@@ -1,5 +1,5 @@
 {
-    "name": "country-list",
+    "name": "country-info",
     "version": "0.0.1",
     "description": "Data about countries - like their ISO codes and currencies",
     "homepage": "https://github.com/Sonatrix/country-list",
@@ -18,7 +18,7 @@
         "data",
         "country"
     ],
-    "author": "Alacritic",
+    "author": "Sonatrix",
     "license": "MIT",
     "devDependencies": {
         "canonical-json": "~0.0.4",
