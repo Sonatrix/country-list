@@ -4375,25 +4375,6 @@
         "status": "assigned"
     },
     {
-        "alpha2": "UK",
-        "alpha3": "",
-        "countryCallingCodes": [],
-        "currencies": [
-            "GBP"
-        ],
-        "emoji": "",
-        "ioc": "",
-        "languages": [
-            "eng",
-            "cor",
-            "gle",
-            "gla",
-            "cym"
-        ],
-        "name": "United Kingdom",
-        "status": "reserved"
-    },
-    {
         "alpha2": "UM",
         "alpha3": "UMI",
         "countryCallingCodes": [
