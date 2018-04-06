@@ -22,12 +22,12 @@
     "license": "MIT",
     "devDependencies": {
         "canonical-json": "~0.0.4",
-        "csv": "~0.4",
-        "mocha": "~2.2",
+        "csv": "~2.0",
+        "mocha": "~5.0",
         "chai": ">1.8.1"
     },
     "dependencies": {
         "underscore": ">1.4.4",
-        "currency-symbol-map": "~2"
+        "currency-symbol-map": "~4"
     }
 }

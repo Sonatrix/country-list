@@ -34,7 +34,7 @@ describe('currencies', function () {
     });
 
     it('should find AED (has no symbol)', function () {
-      assert.equal( currencies.AED.symbol, 'AED');
+      assert.equal( currencies.AED.symbol, 'د.إ');
     });
 
   });

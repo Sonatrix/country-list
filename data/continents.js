@@ -1,10 +1,9 @@
 'use strict';
 
-var _ = require('underscore');
-var regions = require('./regions.js');
-var continents = {};
+const _ = require('underscore');
+const regions = require('./regions.js');
 
-continents.asia = {
+const asia = {
   name: 'Asia',
   regions: ['centralAsia', 'southernAsia', 'southeastAsia', 'eastAsia', 'westernAsia'],
   countries: _.flatten([
@@ -17,7 +16,7 @@ continents.asia = {
   .sort()
 };
 
-continents.africa = {
+const africa = {
   name: 'Africa',
   regions: ['centralAfrica', 'northAfrica', 'southernAfrica', 'eastAfrica', 'westAfrica'],
   countries: _.flatten([
@@ -30,7 +29,7 @@ continents.africa = {
   .sort()
 };
 
-continents.northAmerica = {
+const northAmerica = {
   name: 'North America',
   regions: ['centralAmerica', 'northernAmerica', 'caribbean'],
   countries: _.flatten([
@@ -41,7 +40,7 @@ continents.northAmerica = {
   .sort()
 };
 
-continents.southAmerica = {
+const southAmerica = {
   name: 'South America',
   regions: ['southAmerica'],
   countries: _.flatten([
@@ -50,7 +49,7 @@ continents.southAmerica = {
   .sort()
 }
 
-continents.antartica = {
+const antartica = {
   name: 'Antartica',
   regions: ['antartica'],
   countries: _.flatten([
@@ -59,7 +58,7 @@ continents.antartica = {
   .sort()
 }
 
-continents.europe = {
+const europe = {
   name: 'Europe',
   regions: ['northernEurope', 'southernEurope', 'easternEurope', 'westernEurope'],
   countries: _.flatten([
@@ -71,7 +70,7 @@ continents.europe = {
   .sort()
 }
 
-continents.oceania = {
+const oceania = {
   name: 'Oceania',
   regions: ['australia', 'melanesia', 'micronesia', 'polynesia'],
   countries: _.flatten([
@@ -83,4 +82,12 @@ continents.oceania = {
   .sort()
 };
 
-module.exports = continents;
+module.exports = {
+  asia, 
+  africa, 
+  northAmerica, 
+  southAmerica, 
+  antartica, 
+  europe, 
+  oceania
+};
