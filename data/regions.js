@@ -1,8 +1,6 @@
 'use strict';
 
-var regions = {};
-
-regions.centralAsia = {
+const centralAsia = {
   name: 'Central Asia',
   countries: [
     // source is http://en.wikipedia.org/wiki/Central_Asia
@@ -14,7 +12,7 @@ regions.centralAsia = {
   ]
 }
 
-regions.southernAsia = {
+const southernAsia = {
   name: 'Southern Asia',
   countries: [
     // source is http://en.wikipedia.org/wiki/South_Asia
@@ -31,7 +29,7 @@ regions.southernAsia = {
   ]
 }
 
-regions.southeastAsia = {
+const southeastAsia = {
   name: 'Southeast Asia',
   countries: [
     // source is http://en.wikipedia.org/wiki/Southeast_Asia
@@ -51,7 +49,7 @@ regions.southeastAsia = {
   ]
 }
 
-regions.eastAsia = {
+const eastAsia = {
   name: 'East Asia',
   countries: [
     // source is http://en.wikipedia.org/wiki/East_Asia
@@ -66,7 +64,7 @@ regions.eastAsia = {
   ]
 }
 
-regions.westernAsia = {
+const westernAsia = {
   name: 'Western Asia',
   countries: [
     // source is http://en.wikipedia.org/wiki/Western_Asia
@@ -89,7 +87,7 @@ regions.westernAsia = {
   ]
 }
 
-regions.centralAfrica = {
+const centralAfrica = {
   name: 'Central Aftrica',
   countries: [
     // source is http://en.wikipedia.org/wiki/Central_Africa
@@ -105,7 +103,7 @@ regions.centralAfrica = {
   ]
 };
 
-regions.northAfrica = {
+const northAfrica = {
   name: 'North Africa',
   countries: [
     // source is http://en.wikipedia.org/wiki/North_Africa
@@ -119,7 +117,7 @@ regions.northAfrica = {
   ]
 };
 
-regions.southernAfrica = {
+const southernAfrica = {
   name: 'Southern Africa',
   countries: [
     // source is http://en.wikipedia.org/wiki/Southern_Africa
@@ -131,7 +129,7 @@ regions.southernAfrica = {
   ]
 };
 
-regions.eastAfrica = {
+const eastAfrica = {
   name: 'East Africa',
   countries: [
     // source is http://en.wikipedia.org/wiki/East_Africa
@@ -158,7 +156,7 @@ regions.eastAfrica = {
   ]
 };
 
-regions.westAfrica = {
+const westAfrica = {
   name: 'West Africa',
   countries: [
     // source is http://en.wikipedia.org/wiki/West_Africa
@@ -182,7 +180,7 @@ regions.westAfrica = {
   ]
 };
 
-regions.centralAmerica = {
+const centralAmerica = {
   name: 'Central America',
   countries: [
     // source is http://en.wikipedia.org/wiki/Central_America
@@ -196,7 +194,7 @@ regions.centralAmerica = {
   ]
 }
 
-regions.northernAmerica = {
+const northernAmerica = {
   name: 'Northern America',
   countries: [
     // source is http://en.wikipedia.org/wiki/Northern_America
@@ -209,7 +207,7 @@ regions.northernAmerica = {
   ]
 }
 
-regions.caribbean = {
+const caribbean = {
   name: 'Caribbean',
   countries: [
     // source is http://en.wikipedia.org/wiki/Caribbean
@@ -244,7 +242,7 @@ regions.caribbean = {
   ]
 }
 
-regions.southAmerica = {
+const southAmerica = {
   name: 'South America',
   countries: [
     // source is http://en.wikipedia.org/wiki/South_America
@@ -265,7 +263,7 @@ regions.southAmerica = {
   ]
 }
 
-regions.antartica = {
+const antartica = {
   name: 'Antartica',
   countries: [
     // source is http://en.wikipedia.org/wiki/Antarctica
@@ -277,7 +275,7 @@ regions.antartica = {
   ]
 }
 
-regions.northernEurope = {
+const northernEurope = {
   name: 'Northern Europe',
   countries: [
     // source is http://en.wikipedia.org/wiki/Northern_Europe
@@ -300,7 +298,7 @@ regions.northernEurope = {
   ]
 }
 
-regions.southernEurope = {
+const southernEurope = {
   name: 'Southern Europe',
   countries: [
     // source is http://en.wikipedia.org/wiki/Southern_Europe
@@ -324,7 +322,7 @@ regions.southernEurope = {
   ]
 }
 
-regions.easternEurope = {
+const easternEurope = {
   name: 'Eastern Europe',
   countries: [
     // source is http://en.wikipedia.org/wiki/Eastern_Europe
@@ -342,7 +340,7 @@ regions.easternEurope = {
   ]
 }
 
-regions.westernEurope = {
+const westernEurope = {
   name: 'Western Europe',
   countries: [
     // source is http://en.wikipedia.org/wiki/Western_Europe
@@ -358,7 +356,7 @@ regions.westernEurope = {
   ],
 };
  
-regions.australia = {
+const australia = {
   name: 'Australia',
   countries: [
     // source is http://en.wikipedia.org/wiki/Oceania
@@ -368,7 +366,7 @@ regions.australia = {
   ]
 };
 
-regions.melanesia = {
+const melanesia = {
   name: 'Melanesia',
   countries: [
     // source is http://en.wikipedia.org/wiki/Oceania
@@ -380,7 +378,7 @@ regions.melanesia = {
   ]
 };    
 
-regions.micronesia = {
+const micronesia = {
   name: 'Micronesia',
   countries: [
     // source is http://en.wikipedia.org/wiki/Oceania
@@ -395,7 +393,7 @@ regions.micronesia = {
   ]
 };    
 
-regions.polynesia = {
+const polynesia = {
   name: 'Polynesia',
   countries: [
     // source is http://en.wikipedia.org/wiki/Oceania
@@ -412,4 +410,28 @@ regions.polynesia = {
   ]
 };
 
-module.exports = regions;
+module.exports = {
+  centralAsia,
+  southernAsia,
+  southeastAsia,
+  eastAsia,
+  westernAsia,
+  centralAfrica,
+  northAfrica,
+  southernAfrica,
+  eastAfrica,
+  westAfrica,
+  centralAmerica,
+  northernAmerica,
+  southAmerica,
+  caribbean,
+  antartica,
+  northernEurope,
+  southernEurope,
+  easternEurope,
+  westernEurope,
+  australia,
+  melanesia,
+  micronesia,
+  polynesia
+};
