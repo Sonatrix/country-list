@@ -21,10 +21,11 @@
     "author": "Sonatrix",
     "license": "MIT",
     "devDependencies": {
+        "babel-cli": "^6.26.0",
         "canonical-json": "~0.0.4",
-        "csv": "~2.0",
-        "mocha": "~5.0",
-        "chai": ">1.8.1"
+        "chai": ">1.8.1",
+        "csv": "~3.0",
+        "mocha": "~5.1"
     },
     "dependencies": {
         "underscore": ">1.4.4",

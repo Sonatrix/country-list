@@ -2136,16 +2136,16 @@
     "name": "Niuean"
   },
   {
-    "alpha2": "nl",
-    "alpha3": "nld",
+    "alpha2": "",
+    "alpha3": "",
     "bibliographic": "dut",
-    "name": "Dutch"
+    "name": "Flemish"
   },
   {
     "alpha2": "nl",
     "alpha3": "nld",
     "bibliographic": "dut",
-    "name": "Flemish"
+    "name": "Dutch"
   },
   {
     "alpha2": "nn",
