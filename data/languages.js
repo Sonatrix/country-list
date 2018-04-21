@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "alpha2": "aa",
     "alpha3": "aar",

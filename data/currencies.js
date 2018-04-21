@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "code": "AED",
     "decimals": 2,

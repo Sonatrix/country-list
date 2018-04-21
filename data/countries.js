@@ -1,4 +1,4 @@
-[{
+module.exports =  [{
         "alpha2": "AC",
         "alpha3": "",
         "countryCallingCodes": [

@@ -3,9 +3,9 @@
 var _ = require('underscore');
 var continents = require('./data/continents');
 var regions = require('./data/regions');
-var countriesAll = require('./data/countries.json');
-var currenciesAll = require('./data/currencies.json');
-var languagesAll = require('./data/languages.json');
+var countriesAll = require('./data/countries');
+var currenciesAll = require('./data/currencies');
+var languagesAll = require('./data/languages');
 var lookup = require('./lookup');
 
 var getSymbol = require('currency-symbol-map')
