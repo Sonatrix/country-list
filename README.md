@@ -15,7 +15,7 @@ I suspect that many of the `currencies` entries on the countries may be wrong. H
 
 The data currently provided for each country is:
 
-  * `name` The english name for the country
+  * `name` The english name for the country 
   * `alpha2` The [ISO 3166-1 alpha 2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code
   * `alpha3` The [ISO 3166-1 alpha 3](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) code
   * `status`: The ISO status of the entry - see below.
@@ -103,9 +103,9 @@ console.log( regions.europe.countries )
 ``` javascript
 var lookup = require('country-data-list').lookup;
 
-// Match a value (grab first from array)
+// Match a value (grab first from array) case insensitive
 var france = lookup.countries({name: 'France'})[0];
-
+ 
 // Or match one of several possible values.
 var eurozone_countries = lookup.countries({currencies: 'EUR'});
 ```
