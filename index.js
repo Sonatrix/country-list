@@ -74,7 +74,7 @@ var callingCodesAll = _.reduce(countriesAll, function (codes, country) {
     callingCountries[country.alpha3] = country;
 
     _.each(country.countryCallingCodes, function (code) {
-      if (codes.indexOf(code) == -1) {
+      if (codes.indexOf(code) === -1) {
         codes.push(code);
       }
     });

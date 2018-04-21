@@ -522,7 +522,7 @@ module.exports = [
     "number": "426"
   },
   {
-    "code": "LTL",
+    "code": "EUR",
     "decimals": 2,
     "name": "Lithuanian litas",
     "number": "440"
@@ -1066,5 +1066,11 @@ module.exports = [
     "decimals": 2,
     "name": "Zambian kwacha",
     "number": "967"
+  },
+  {
+    "code": 'EEK',
+    "decimals": 2,
+    "name": 'Estonian kroon',
+    "number": "233"
   }
 ]

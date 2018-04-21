@@ -19,7 +19,7 @@ function search(data, query) {
 
       if(_.isArray(prop)) return prop.indexOf(v[1]) >= 0;
 
-      return prop == v[1];
-    }).length == q.length;
+      return prop === v[1];
+    }).length === q.length;
   });
 }

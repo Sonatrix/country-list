@@ -1,4 +1,4 @@
-module.exports =  [{
+module.exports = [{
         "alpha2": "AC",
         "alpha3": "",
         "countryCallingCodes": [
@@ -1331,7 +1331,10 @@ module.exports =  [{
         "emoji": "🇪🇸",
         "ioc": "ESP",
         "languages": [
-            "spa"
+            "spa",
+            "cat",
+            "glg",
+            "eus"
         ],
         "name": "Spain",
         "status": "assigned"
@@ -4647,7 +4650,9 @@ module.exports =  [{
     {
         "alpha2": "YD",
         "alpha3": "YMD",
-        "countryCallingCodes": [],
+        "countryCallingCodes": [
+        	"+967"
+        ],
         "currencies": [],
         "ioc": "",
         "languages": [],
@@ -4691,7 +4696,9 @@ module.exports =  [{
     {
         "alpha2": "YU",
         "alpha3": "YUG",
-        "countryCallingCodes": [],
+        "countryCallingCodes": [
+        	"+38"
+        ],
         "currencies": [],
         "ioc": "",
         "languages": [],
@@ -4742,7 +4749,9 @@ module.exports =  [{
     {
         "alpha2": "ZR",
         "alpha3": "ZAR",
-        "countryCallingCodes": [],
+        "countryCallingCodes": [
+        	"+243"
+        ],
         "currencies": [],
         "ioc": "",
         "languages": [],

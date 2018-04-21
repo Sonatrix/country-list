@@ -28,7 +28,7 @@
         "mocha": "~5.1"
     },
     "dependencies": {
-        "underscore": ">1.4.4",
-        "currency-symbol-map": "~4"
+        "currency-symbol-map": "~4",
+        "underscore": ">1.4.4"
     }
 }
