@@ -19,6 +19,12 @@ describe('lookup', function () {
     });
   });
 
+  describe("when country name is case sensitive", function () {
+    it("should exist", function () {
+      assert.strictEqual( lookup.countries({name: "FRANCE"}).length, 1);
+    });
+  });
+
   describe("check countries by name", function () {
     _.each( countries, function (country, name) {
       describe(name, function () {
