@@ -1,5 +1,3 @@
-'use strict';
-
 const centralAsia = {
   name: 'Central Asia',
   countries: [
@@ -9,8 +7,8 @@ const centralAsia = {
     'TJ', // Tajikistan
     'TM', // Turkmenistan
     'UZ', // Uzbekistan
-  ]
-}
+  ],
+};
 
 const southernAsia = {
   name: 'Southern Asia',
@@ -26,8 +24,8 @@ const southernAsia = {
     'NP', // Nepal
     'PK', // Pakistan
     'LK', // Sri Lanka
-  ]
-}
+  ],
+};
 
 const southeastAsia = {
   name: 'Southeast Asia',
@@ -46,8 +44,8 @@ const southeastAsia = {
     'SG', // Singapore
     'TH', // Thailand
     'VN', // Vietnam
-  ]
-}
+  ],
+};
 
 const eastAsia = {
   name: 'East Asia',
@@ -61,8 +59,8 @@ const eastAsia = {
     'MO', // Macao
     'MN', // Mongolia
     'TW', // Taiwan
-  ]
-}
+  ],
+};
 
 const westernAsia = {
   name: 'Western Asia',
@@ -84,8 +82,8 @@ const westernAsia = {
     'TR', // Turkey
     'AE', // United Arab Emirates
     'YE', // Yemen
-  ]
-}
+  ],
+};
 
 const centralAfrica = {
   name: 'Central Aftrica',
@@ -100,7 +98,7 @@ const centralAfrica = {
     'GQ', // Equatorial Guinea
     'GA', // Gabon
     'ST', // São Tomé and Príncipe
-  ]
+  ],
 };
 
 const northAfrica = {
@@ -114,7 +112,7 @@ const northAfrica = {
     'SD', // Sudan
     'TN', // Tunisia
     'EH', // Western Sahara
-  ]
+  ],
 };
 
 const southernAfrica = {
@@ -126,7 +124,7 @@ const southernAfrica = {
     'NA', // Namibia
     'ZA', // South Africa
     'SZ', // Swaziland
-  ]
+  ],
 };
 
 const eastAfrica = {
@@ -153,7 +151,7 @@ const eastAfrica = {
     'UG', // Uganda
     'ZM', // Zambia
     'ZW', // Zimbabwe
-  ]
+  ],
 };
 
 const westAfrica = {
@@ -177,7 +175,7 @@ const westAfrica = {
     'SN', // Senegal
     'SL', // Sierra Leone
     'TG', // Togo
-  ]
+  ],
 };
 
 const centralAmerica = {
@@ -191,8 +189,8 @@ const centralAmerica = {
     'HN', // Honduras
     'NI', // Nicaragua
     'PA', // Panama
-  ]
-}
+  ],
+};
 
 const northernAmerica = {
   name: 'Northern America',
@@ -204,8 +202,8 @@ const northernAmerica = {
     'MX', // Mexico
     'PM', // Saint Pierre and Miquelon
     'US', // United States
-  ]
-}
+  ],
+};
 
 const caribbean = {
   name: 'Caribbean',
@@ -239,8 +237,8 @@ const caribbean = {
     'TT', // Trinidad and Tobago
     'TC', // Turks & Caicos
     'VI', // United States Virgin Islands
-  ]
-}
+  ],
+};
 
 const southAmerica = {
   name: 'South America',
@@ -260,8 +258,8 @@ const southAmerica = {
     'SR', // Suriname
     'UY', // Uruguay
     'VE', // Venezuela
-  ]
-}
+  ],
+};
 
 const antartica = {
   name: 'Antartica',
@@ -272,8 +270,8 @@ const antartica = {
     'TF', // French Southern Territories
     'HM', // Heard Island and McDonald Islands
     'GS', // South Georgia and the South Sandwich Islands
-  ]
-}
+  ],
+};
 
 const northernEurope = {
   name: 'Northern Europe',
@@ -295,8 +293,8 @@ const northernEurope = {
     'SJ', // Svalbard and Jan Mayen
     'SE', // Sweden
     'GB', // United Kingdom
-  ]
-}
+  ],
+};
 
 const southernEurope = {
   name: 'Southern Europe',
@@ -319,8 +317,8 @@ const southernEurope = {
     'RS', // Serbia
     'SI', // Slovenia
     'ES', // Spain
-  ]
-}
+  ],
+};
 
 const easternEurope = {
   name: 'Eastern Europe',
@@ -337,8 +335,8 @@ const easternEurope = {
     'RU', // Russia
     'SK', // Slovakia
     'UA', // Ukraine
-  ]
-}
+  ],
+};
 
 const westernEurope = {
   name: 'Western Europe',
@@ -355,7 +353,7 @@ const westernEurope = {
     'CH', // Switzerland
   ],
 };
- 
+
 const australia = {
   name: 'Australia',
   countries: [
@@ -363,7 +361,7 @@ const australia = {
     'AU', // Australia
     'NF', // Norfolk Island
     'NZ', // New Zealand
-  ]
+  ],
 };
 
 const melanesia = {
@@ -375,8 +373,8 @@ const melanesia = {
     'PG', // Papua New Guinea
     'SB', // Solomon Islands
     'VU', // Vanuatu
-  ]
-};    
+  ],
+};
 
 const micronesia = {
   name: 'Micronesia',
@@ -390,8 +388,8 @@ const micronesia = {
     'MP', // Northern Mariana Islands
     'PW', // Palau
     'UM', // United States Minor Outlying Islands
-  ]
-};    
+  ],
+};
 
 const polynesia = {
   name: 'Polynesia',
@@ -407,10 +405,10 @@ const polynesia = {
     'TO', // Tonga
     'TV', // Tuvalu
     'WF', // Wallis and Futuna
-  ]
+  ],
 };
 
-module.exports = {
+export default {
   centralAsia,
   southernAsia,
   southeastAsia,
@@ -433,5 +431,5 @@ module.exports = {
   australia,
   melanesia,
   micronesia,
-  polynesia
+  polynesia,
 };

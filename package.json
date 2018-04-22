@@ -1,14 +1,26 @@
 {
     "name": "country-data-list",
-    "version": "0.0.8",
+    "version": "1.0.0",
     "description": "Data about countries - like their ISO codes and currencies",
     "homepage": "https://github.com/Sonatrix/country-list",
     "bugs": {
         "url": "https://github.com/Sonatrix/country-list/issues"
     },
-    "main": "index.js",
+    "main": "dist/country-data-list.js",
+    "lint-staged": {
+        "*/**/*.{js}": [
+            "eslint --fix",
+            "prettier --config .prettierrc --write"
+        ]
+    },
     "scripts": {
-        "test": "mocha"
+        "precommit": "lint-staged",
+        "build": "webpack --mode=production",
+        "test": "mocha --require babel-register",
+        "lint": "eslint src test",
+        "prepare": "npm run lint && npm run test && npm run build",
+        "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check",
+        "prettify": "./node_modules/.bin/prettier --config .prettierrc --write '*/**/*.{js,jsx}'"
     },
     "repository": {
         "type": "git",
@@ -16,19 +28,42 @@
     },
     "keywords": [
         "data",
-        "country"
+        "country",
+        "es6",
+        "es2015",
+        "babel",
+        "webpack4",
+        "mocha",
+        "chai",
+        "eslint",
+        "travis",
+        "travis-ci"
     ],
     "author": "Sonatrix",
     "license": "MIT",
-    "devDependencies": {
-        "babel-cli": "^6.26.0",
-        "canonical-json": "~0.0.4",
-        "chai": ">1.8.1",
-        "csv": "~3.0",
-        "mocha": "~5.1"
-    },
     "dependencies": {
         "currency-symbol-map": "~4",
         "underscore": ">1.4.4"
+    },
+    "devDependencies": {
+        "babel-core": "6.26.0",
+        "babel-eslint": "8.2.3",
+        "babel-loader": "7.1.4",
+        "babel-preset-env": "1.6.1",
+        "babel-register": "6.26.0",
+        "chai": "4.1.2",
+        "eslint": "4.19.1",
+        "eslint-config-airbnb": "16.1.0",
+        "eslint-config-prettier": "^2.9.0",
+        "eslint-plugin-import": "^2.7.0",
+        "eslint-plugin-jsx-a11y": "^6.0.2",
+        "eslint-plugin-prettier": "^2.6.0",
+        "eslint-plugin-react": "^7.4.0",
+        "mocha": "^5.1.1",
+        "prettier": "^1.12.0",
+        "webpack": "4.6.0",
+        "webpack-cli": "^2.0.15",
+        "husky": "^0.14.3",
+        "lint-staged": "^7.0.4"
     }
 }

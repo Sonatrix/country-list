@@ -127,24 +127,6 @@ to add are:
 
   * other currency that it is [pegged](http://en.wikipedia.org/wiki/Fixed_exchange_rate) to
 
-## Using with webpack
-
-As this code loads the data from JSON files you need to add the JSON loader to webpack:
-
-``` bash
-npm install json-loader --save-dev
-```
-
-and then include in your `webpack.config.js`:
-
-``` javascript
-// ...
-   loaders: [
-      // other loaders
-      { test: /\.json$/, loader: 'json' },
-  ],
-// ...
-```
 
 ## Other similar bits of code
 
@@ -167,11 +149,9 @@ cd country-list
 # install the dependencies
 npm install .
 
-# Edit the countries.csv
-open data/countries.csv
+# Edit the countries.js
+open data/countries.js
 
-# Convert the raw data (CSV or JS files) to JSON
-make
 
 # Run the tests
 mocha
