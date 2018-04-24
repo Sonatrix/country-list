@@ -1,11 +1,13 @@
 import { assert } from 'chai';
 import { _ } from 'underscore';
 
+import countryData from '../src/index';
+
 const {
   callingCodes: { all: callingCodes },
   countries: { all: countries },
   callingCountries,
-} = require('../src/index');
+} = countryData;
 
 describe('calling codes', () => {
   describe('list of all calling codes', () => {

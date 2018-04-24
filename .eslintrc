@@ -1,7 +1,7 @@
 {
   'env': {
     'browser': true,
-    'jest': true,
+    'mocha': true,
     'es6': true,
     'node': true,
   },
@@ -17,5 +17,10 @@
       'singleQuote': true,
       'trailingComma': 'es5'
     }],
+  },
+  "parserOptions":{
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
   }
 }

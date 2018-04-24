@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import { _ } from 'underscore';
 
 import { countries as countriesAll, currencies, languages } from '../src/index';
-
+console.log(countriesAll);
 describe('countries', () => {
   describe('all', () => {
     it('should be array', () => {

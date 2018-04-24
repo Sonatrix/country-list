@@ -1,38 +1,34 @@
-import { _ } from 'underscore';
 import continents from './data/continents';
 import regions from './data/regions';
 import countriesAll from './data/countries';
 import currenciesAll from './data/currencies';
 import languagesAll from './data/languages';
-import lookup from './lookup';
+import lookupFn from './lookup';
 
 const getSymbol = require('currency-symbol-map');
 
-exports.continents = continents;
-exports.regions = regions;
-
-exports.countries = {
+const countries = {
   all: countriesAll,
 };
 
-_.each(countriesAll, country => {
+countriesAll.forEach(country => {
   //   prefer assigned country codes over inactive ones
-  const exportedAlpha2 = exports.countries[country.alpha2];
-  if (!exportedAlpha2 || exportedAlpha2.status === 'deleted') {
-    exports.countries[country.alpha2] = country;
+  const { status } = countries[country.alpha2] || {};
+  if (status === 'deleted') {
+    countries[country.alpha2] = country;
   }
 
-  const exportedAlpha3 = exports.countries[country.alpha3];
-  if (!exportedAlpha3 || exportedAlpha3.status === 'deleted') {
-    exports.countries[country.alpha3] = country;
+  const { status: statusAlpha3 } = countries[country.alpha3] || {};
+  if (statusAlpha3 === 'deleted') {
+    countries[country.alpha3] = country;
   }
 });
 
-exports.currencies = {
+const currencies = {
   all: currenciesAll,
 };
 
-_.each(currenciesAll, currency => {
+currenciesAll.forEach(currency => {
   //  If the symbol isn't available, default to the currency code
 
   let symbolCode = getSymbol(currency.code);
@@ -41,23 +37,23 @@ _.each(currenciesAll, currency => {
   }
 
   const newCurrency = Object.assign(currency, { symbol: symbolCode });
-  exports.currencies[currency.code] = newCurrency;
+  currencies[currency.code] = newCurrency;
 });
 
-exports.languages = {
+const languages = {
   all: languagesAll,
 };
 
 //   Note that for the languages there are several entries with the same alpha3 -
 //   eg Dutch and Flemish. Not sure how to best deal with that - here whichever
 //   comes last wins.
-_.each(languagesAll, language => {
-  exports.languages[language.alpha2] = language;
-  exports.languages[language.bibliographic] = language;
-  exports.languages[language.alpha3] = language;
+languagesAll.forEach(language => {
+  languages[language.alpha2] = language;
+  languages[language.bibliographic] = language;
+  languages[language.alpha3] = language;
 });
 
-exports.lookup = lookup({
+const lookup = lookupFn({
   countries: countriesAll,
   currencies: currenciesAll,
   languages: languagesAll,
@@ -65,33 +61,29 @@ exports.lookup = lookup({
 
 const callingCountries = { all: [] };
 
-const callingCodesAll = _.reduce(
-  countriesAll,
-  (codes, country) => {
-    if (country.countryCallingCodes && country.countryCallingCodes.length) {
-      callingCountries.all.push(country);
+const callingCodesAll = countriesAll.reduce((codes, country) => {
+  const { countryCallingCodes, alpha2, alpha3 } = country;
+  if (countryCallingCodes && countryCallingCodes.length) {
+    callingCountries.all.push(country);
 
-      callingCountries[country.alpha2] = country;
-      callingCountries[country.alpha3] = country;
+    callingCountries[alpha2] = country;
+    callingCountries[alpha3] = country;
 
-      _.each(country.countryCallingCodes, code => {
-        if (codes.indexOf(code) === -1) {
-          codes.push(code);
-        }
-      });
-    }
-    return codes;
-  },
-  []
-);
+    countryCallingCodes.forEach(code => {
+      if (codes.indexOf(code) === -1) {
+        codes.push(code);
+      }
+    });
+  }
+  return codes;
+}, []);
 
 delete callingCountries['']; //   remove empty alpha3s
-exports.callingCountries = callingCountries;
 
 callingCodesAll.sort((a, b) => {
   const parse = str => +str;
-  const splitA = _.map(a.split(' '), parse);
-  const splitB = _.map(b.split(' '), parse);
+  const splitA = a.split(' ').map(parse);
+  const splitB = b.split(' ').map(parse);
 
   if (splitA[0] < splitB[0]) {
     return -1;
@@ -111,6 +103,17 @@ callingCodesAll.sort((a, b) => {
   return 0;
 });
 
-exports.callingCodes = {
+const callingCodes = {
   all: callingCodesAll,
+};
+
+export default {
+  continents,
+  regions,
+  countries,
+  currencies,
+  languages,
+  lookup,
+  callingCountries,
+  callingCodes,
 };
