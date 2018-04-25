@@ -5,9 +5,9 @@ import { countries, regions } from '../src/index';
 
 describe('regions', () => {
   describe("check region's countries are known", () => {
-    _.each(regions, (region, name) => {
-      describe(name, () => {
-        _.each(region.countries, country => {
+    regions.forEach((region, name) => {
+      describe(name.toString(), () => {
+        region.countries.forEach(country => {
           it(country, () => {
             assert(countries[country]);
           });
@@ -19,10 +19,10 @@ describe('regions', () => {
   describe('check region countries exist', () => {
     let countriesAssigned = [];
 
-    _.each(regions, (region, name) => {
-      describe(name, () => {
+    regions.forEach((region, name) => {
+      describe(name.toString(), () => {
         if (!region.countries) {
-          _.each(region[name].countries, country => {
+          region[name].countries.forEach(country => {
             countriesAssigned.push(country);
           });
         }
@@ -30,7 +30,7 @@ describe('regions', () => {
     });
     countriesAssigned = countriesAssigned.sort();
     const duplicate = countriesAssigned.filter((value, index, array) => {
-      delete array[index];
+      array.splice(index);
       return array.indexOf(value) !== -1;
     });
 
@@ -43,13 +43,13 @@ describe('regions', () => {
     const countriesAssigned = [];
     const countriesAvailable = [];
 
-    _.each(regions, region => {
-      _.each(region.countries, country => {
+    regions.forEach(region => {
+      region.countries.forEach(country => {
         countriesAssigned.push(country);
       });
     });
 
-    _.each(countries.all, country => {
+    countries.all.forEach(country => {
       if (country.status === 'assigned') {
         countriesAvailable.push(country.alpha2);
       }

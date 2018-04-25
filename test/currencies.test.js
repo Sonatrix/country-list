@@ -1,12 +1,11 @@
 import { assert } from 'chai';
-import { _ } from 'underscore';
 
 import { currencies } from '../src/index';
 
 describe('currencies', () => {
   describe('all', () => {
     it('should be array', () => {
-      assert(_.isArray(currencies.all));
+      assert(Array.isArray(currencies.all));
     });
   });
 
@@ -18,7 +17,7 @@ describe('currencies', () => {
 
   describe('formatting', () => {
     it('decimals should be numbers', () => {
-      assert(_.isNumber(currencies.USD.decimals));
+      assert(!Number.isNaN(currencies.USD.decimals));
     });
   });
 

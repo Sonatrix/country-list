@@ -1,5 +1,5 @@
 import continents from './data/continents';
-import regions from './data/regions';
+import * as regions from './data/regions';
 import countriesAll from './data/countries';
 import currenciesAll from './data/currencies';
 import languagesAll from './data/languages';
@@ -107,7 +107,7 @@ const callingCodes = {
   all: callingCodesAll,
 };
 
-export default {
+export {
   continents,
   regions,
   countries,

@@ -1,7 +1,6 @@
 import { assert } from 'chai';
-import { _ } from 'underscore';
 
-import countryData from '../src/index';
+import * as countryData from '../src/index';
 
 const assertValidReferences = (
   referenceListName,
@@ -9,13 +8,15 @@ const assertValidReferences = (
   listName,
   listKey
 ) => {
-  const validIds = _.pluck(countryData[referenceListName].all, referenceIdKey);
-  _.each(countryData[listName].all, item => {
+  const validIds = countryData[referenceListName].all.map(
+    data => data[referenceIdKey]
+  );
+  countryData[listName].all.forEach(item => {
     describe(`${listKey} of ${item.name}`, () => {
       it(`should be a valid reference to ${referenceIdKey} of ${referenceListName}`, () => {
-        _.each(item[listKey], id => {
+        item[listKey].forEach(id => {
           assert(
-            _.contains(validIds, id),
+            validIds.includes(id),
             `Expected ${id} in ${listKey} of ${listName} to be a valid entry in ${referenceListName}`
           );
         });

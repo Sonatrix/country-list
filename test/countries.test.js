@@ -1,12 +1,13 @@
 import { assert } from 'chai';
-import { _ } from 'underscore';
 
-import { countries as countriesAll, currencies, languages } from '../src/index';
-console.log(countriesAll);
+import * as countryData from '../src/index';
+
+const { countries: countriesAll, currencies, languages } = countryData;
+
 describe('countries', () => {
   describe('all', () => {
     it('should be array', () => {
-      assert(_.isArray(countriesAll.all));
+      assert(Array.isArray(countriesAll.all));
     });
   });
 
@@ -29,7 +30,7 @@ describe('countries', () => {
   });
 
   describe('check each country has correct form', () => {
-    _.each(countriesAll.all, ({ name, status, alpha2, alpha3 }) => {
+    countriesAll.all.forEach(({ name, status, alpha2, alpha3 }) => {
       describe(name, () => {
         it('should have a status', () => {
           assert(status);
@@ -51,9 +52,9 @@ describe('countries', () => {
   });
 
   describe('check currencies for each country', () => {
-    _.each(countriesAll.all, ({ alpha2, currencies: currencyList }) => {
+    countriesAll.all.forEach(({ alpha2, currencies: currencyList }) => {
       describe(alpha2, () => {
-        _.each(currencyList, currency => {
+        currencyList.forEach(currency => {
           it(currency, () => {
             assert(currencies[currency]);
           });
@@ -78,9 +79,9 @@ describe('countries', () => {
   });
 
   describe('check languages for each country', () => {
-    _.each(countriesAll.all, ({ alpha2, languages: languagesList }) => {
+    countriesAll.all.forEach(({ alpha2, languages: languagesList }) => {
       describe(alpha2, () => {
-        _.each(languagesList, language => {
+        languagesList.forEach(language => {
           it(language, () => {
             assert(languages[language]);
           });

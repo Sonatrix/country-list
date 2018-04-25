@@ -1,12 +1,11 @@
 import { assert } from 'chai';
-import { _ } from 'underscore';
 
 import { languages } from '../src/index';
 
 describe('languages', () => {
   describe('all', () => {
     it('should be array', () => {
-      assert(_.isArray(languages.all));
+      assert(Array.isArray(languages.all));
     });
   });
 

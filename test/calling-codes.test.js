@@ -1,10 +1,10 @@
 import { assert } from 'chai';
 import { _ } from 'underscore';
 
-import countryData from '../src/index';
+import * as countryData from '../src/index';
 
 const {
-  callingCodes: { all: callingCodes },
+  callingCodes,
   countries: { all: countries },
   callingCountries,
 } = countryData;
@@ -17,7 +17,7 @@ describe('calling codes', () => {
           assert(
             _.every(
               countryCallingCodes,
-              code => callingCodes.indexOf(code) > -1
+              code => callingCodes.all.indexOf(code) > -1
             )
           );
         });

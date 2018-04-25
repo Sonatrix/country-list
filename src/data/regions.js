@@ -408,7 +408,7 @@ const polynesia = {
   ],
 };
 
-export default {
+export {
   centralAsia,
   southernAsia,
   southeastAsia,

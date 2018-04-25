@@ -1,5 +1,5 @@
 import { _ } from 'underscore';
-import regions from './regions';
+import * as regions from './regions';
 
 const asia = {
   name: 'Asia',

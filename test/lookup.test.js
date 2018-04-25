@@ -1,15 +1,19 @@
 import { assert } from 'chai';
-import { _ } from 'underscore';
 
-import { lookup, countries, currencies, languages } from '../src/index';
+import * as countryData from '../src/index';
+
+const { lookup, countries, currencies, languages } = countryData;
 
 describe('lookup', () => {
   describe('check countries by currency', () => {
-    _.each(countries, (country, name) => {
-      describe(name, () => {
-        _.each(country.currencies, currency => {
+    countries.all.forEach((country, name) => {
+      describe(name.toString(), () => {
+        country.currencies.forEach(currency => {
           it(currency, () => {
-            assert.include(lookup.countries({ currencies: currency }), country);
+            assert.include(
+              lookup.countries({ currencies: currency })[0],
+              country
+            );
           });
         });
       });
@@ -23,9 +27,9 @@ describe('lookup', () => {
   });
 
   describe('check countries by name', () => {
-    _.each(countries, (country, name) => {
-      describe(name, () => {
-        it(name, () => {
+    countries.all.forEach((country, name) => {
+      describe(name.toString(), () => {
+        it(name.toString(), () => {
           if (country.name)
             assert.include(lookup.countries({ name: country.name }), country);
         });
@@ -34,9 +38,9 @@ describe('lookup', () => {
   });
 
   describe('check currencies by code', () => {
-    _.each(currencies, (currency, name) => {
-      describe(name, () => {
-        it(name, () => {
+    currencies.all.forEach((currency, name) => {
+      describe(name.toString(), () => {
+        it(name.toString(), () => {
           if (currency.code)
             assert.include(
               lookup.currencies({ code: currency.code }),
@@ -48,9 +52,9 @@ describe('lookup', () => {
   });
 
   describe('check languages by name', () => {
-    _.each(languages, (language, name) => {
-      describe(name, () => {
-        it(name, () => {
+    languages.all.forEach((language, name) => {
+      describe(name.toString(), () => {
+        it(name.toString(), () => {
           if (language.name)
             assert.include(lookup.languages({ name: language.name }), language);
         });
