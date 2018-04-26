@@ -10,10 +10,7 @@ describe('lookup', () => {
       describe(name.toString(), () => {
         country.currencies.forEach(currency => {
           it(currency, () => {
-            assert.include(
-              lookup.countries({ currencies: currency })[0],
-              country
-            );
+            assert.include(lookup.countries({ currencies: currency }), country);
           });
         });
       });

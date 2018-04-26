@@ -1,14 +1,12 @@
-const _ = require('underscore');
-
 const search = (data, query) => {
-  const q = _.pairs(query);
+  const q = Object.entries(query);
 
   return data.filter(
     d =>
       q.filter(v => {
         const prop = d[v[0]];
 
-        if (_.isArray(prop)) return prop.indexOf(v[1]) >= 0;
+        if (Array.isArray(prop)) return prop.indexOf(v[1]) >= 0;
 
         return prop.toLowerCase() === v[1].toLowerCase();
       }).length === q.length

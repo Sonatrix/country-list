@@ -1,4 +1,3 @@
-import { _ } from 'underscore';
 import * as regions from './regions';
 
 const asia = {
@@ -10,13 +9,15 @@ const asia = {
     'eastAsia',
     'westernAsia',
   ],
-  countries: _.flatten([
+  countries: [
     regions.centralAsia.countries,
     regions.southernAsia.countries,
     regions.southeastAsia.countries,
     regions.eastAsia.countries,
     regions.westernAsia.countries,
-  ]).sort(),
+  ]
+    .reduce((a, b) => a.concat(b), [])
+    .sort(),
 };
 
 const africa = {
@@ -28,35 +29,43 @@ const africa = {
     'eastAfrica',
     'westAfrica',
   ],
-  countries: _.flatten([
+  countries: [
     regions.centralAfrica.countries,
     regions.northAfrica.countries,
     regions.southernAfrica.countries,
     regions.eastAfrica.countries,
     regions.westAfrica.countries,
-  ]).sort(),
+  ]
+    .reduce((a, b) => a.concat(b), [])
+    .sort(),
 };
 
 const northAmerica = {
   name: 'North America',
   regions: ['centralAmerica', 'northernAmerica', 'caribbean'],
-  countries: _.flatten([
+  countries: [
     regions.centralAmerica.countries,
     regions.northernAmerica.countries,
     regions.caribbean.countries,
-  ]).sort(),
+  ]
+    .reduce((a, b) => a.concat(b), [])
+    .sort(),
 };
 
 const southAmerica = {
   name: 'South America',
   regions: ['southAmerica'],
-  countries: _.flatten([regions.southAmerica.countries]).sort(),
+  countries: [regions.southAmerica.countries]
+    .reduce((a, b) => a.concat(b), [])
+    .sort(),
 };
 
 const antartica = {
   name: 'Antartica',
   regions: ['antartica'],
-  countries: _.flatten([regions.antartica.countries]).sort(),
+  countries: [regions.antartica.countries]
+    .reduce((a, b) => a.concat(b), [])
+    .sort(),
 };
 
 const europe = {
@@ -67,23 +76,27 @@ const europe = {
     'easternEurope',
     'westernEurope',
   ],
-  countries: _.flatten([
+  countries: [
     regions.northernEurope.countries,
     regions.southernEurope.countries,
     regions.easternEurope.countries,
     regions.westernEurope.countries,
-  ]).sort(),
+  ]
+    .reduce((a, b) => a.concat(b), [])
+    .sort(),
 };
 
 const oceania = {
   name: 'Oceania',
   regions: ['australia', 'melanesia', 'micronesia', 'polynesia'],
-  countries: _.flatten([
+  countries: [
     regions.australia.countries,
     regions.melanesia.countries,
     regions.micronesia.countries,
     regions.polynesia.countries,
-  ]).sort(),
+  ]
+    .reduce((a, b) => a.concat(b), [])
+    .sort(),
 };
 
 export default {

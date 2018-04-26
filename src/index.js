@@ -5,7 +5,7 @@ import currenciesAll from './data/currencies';
 import languagesAll from './data/languages';
 import lookupFn from './lookup';
 
-const getSymbol = require('currency-symbol-map');
+import getSymbol from 'currency-symbol-map';
 
 const countries = {
   all: countriesAll,
@@ -14,12 +14,12 @@ const countries = {
 countriesAll.forEach(country => {
   //   prefer assigned country codes over inactive ones
   const { status } = countries[country.alpha2] || {};
-  if (status === 'deleted') {
+  if (!status || status === 'deleted') {
     countries[country.alpha2] = country;
   }
 
   const { status: statusAlpha3 } = countries[country.alpha3] || {};
-  if (statusAlpha3 === 'deleted') {
+  if (!statusAlpha3 || statusAlpha3 === 'deleted') {
     countries[country.alpha3] = country;
   }
 });

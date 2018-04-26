@@ -1,5 +1,4 @@
 import { assert } from 'chai';
-import { _ } from 'underscore';
 
 import * as countryData from '../src/index';
 
@@ -11,12 +10,11 @@ const {
 
 describe('calling codes', () => {
   describe('list of all calling codes', () => {
-    _.each(countries, ({ name, countryCallingCodes }) => {
+    countries.forEach(({ name, countryCallingCodes }) => {
       if (countryCallingCodes && countryCallingCodes.length) {
         it(`should contain codes for ${name}`, () => {
           assert(
-            _.every(
-              countryCallingCodes,
+            countryCallingCodes.every(
               code => callingCodes.all.indexOf(code) > -1
             )
           );

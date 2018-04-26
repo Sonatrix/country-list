@@ -15,7 +15,7 @@
     },
     "scripts": {
         "precommit": "lint-staged",
-        "build": "webpack --mode=production",
+        "build": "rm dist/* && webpack --mode=production",
         "test": "mocha --require babel-register",
         "lint": "eslint src test",
         "prepare": "npm run lint && npm run test && npm run build",
@@ -42,8 +42,7 @@
     "author": "Sonatrix",
     "license": "MIT",
     "dependencies": {
-        "currency-symbol-map": "~4",
-        "underscore": ">1.4.4"
+        "currency-symbol-map": "~4"
     },
     "devDependencies": {
         "babel-core": "6.26.0",
