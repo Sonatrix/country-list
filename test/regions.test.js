@@ -4,7 +4,7 @@ import { countries, regions } from '../src/index';
 
 describe('regions', () => {
   describe("check region's countries are known", () => {
-    for (const key in regions) {
+    Object.keys(regions).forEach(key => {
       describe(key.toString(), () => {
         regions[key].countries.forEach(country => {
           it(country, () => {
@@ -12,12 +12,12 @@ describe('regions', () => {
           });
         });
       });
-    }
+    });
   });
 
   describe('check region countries exist', () => {
     let countriesAssigned = [];
-    for (const key in regions) {
+    Object.keys(regions).forEach(key => {
       const region = regions[key];
       describe(key.toString(), () => {
         if (!region.countries) {
@@ -26,7 +26,7 @@ describe('regions', () => {
           });
         }
       });
-    }
+    });
 
     countriesAssigned = countriesAssigned.sort();
     const duplicate = countriesAssigned.filter((value, index, array) => {
@@ -42,15 +42,15 @@ describe('regions', () => {
   describe('check all assigned countries are in regions', () => {
     const countriesAssigned = [];
     const countriesAvailable = [];
-    for (const key in regions) {
+    Object.keys(regions).forEach(key => {
       regions[key].countries.forEach(country => {
         countriesAssigned.push(country);
       });
-    }
+    });
 
-    countries.all.forEach(country => {
-      if (country.status === 'assigned') {
-        countriesAvailable.push(country.alpha2);
+    countries.all.forEach(({ status, alpha2 }) => {
+      if (status === 'assigned') {
+        countriesAvailable.push(alpha2);
       }
     });
 

@@ -31,7 +31,7 @@ describe('countries', () => {
 
   describe('check each country has correct form', () => {
     countriesAll.all.forEach(({ name, status, alpha2, alpha3 }) => {
-      describe(name, () => {
+      describe(`when country is ${name}`, () => {
         it('should have a status', () => {
           assert(status);
         });
@@ -53,7 +53,7 @@ describe('countries', () => {
 
   describe('check currencies for each country', () => {
     countriesAll.all.forEach(({ alpha2, currencies: currencyList }) => {
-      describe(alpha2, () => {
+      describe(`when alpha2 code is ${alpha2}`, () => {
         currencyList.forEach(currency => {
           it(currency, () => {
             assert(currencies[currency]);
@@ -80,9 +80,9 @@ describe('countries', () => {
 
   describe('check languages for each country', () => {
     countriesAll.all.forEach(({ alpha2, languages: languagesList }) => {
-      describe(alpha2, () => {
+      describe(`when country code is ${alpha2}`, () => {
         languagesList.forEach(language => {
-          it(language, () => {
+          it(`should exist`, () => {
             assert(languages[language]);
           });
         });
