@@ -6,7 +6,7 @@ and I couldn't find any easy to use source of it. So I compiled it all here.
 
 ## Work in Progress
 
-This code base may change a bit until it hits `0.1.x` - feel free to use it, but be sure to check between upgrades.
+feel free to use it, but be sure to check between upgrades.
 
 I suspect that many of the `currencies` entries on the countries may be wrong. Help checking them would be appreciated.
 
@@ -25,7 +25,6 @@ The data currently provided for each country is:
   * `ioc` The [International Olympic Committee country code](http://en.wikipedia.org/wiki/List_of_IOC_country_codes)
   * `emoji` The emoji of country's flag.
   * `subunits` Geographically disjoint components like Alaska in the USA, administratively distinct regions such as the countries of Great Britain, or overseas islands for many European nations.
-  * `bounds` Bounding box as (lon1, lat1, lon2, lat2). If `subunits` are given, `bounds` contains separate array items for each subunit.
   
 ### Status notes
 
@@ -75,7 +74,7 @@ npm install country-data-list
 
 
 ## Example usage
-
+# es5
 ``` javascript
 var countries        = require('country-data-list').countries,
     currencies       = require('country-data-list').currencies,
@@ -110,6 +109,19 @@ var france = lookup.countries({name: 'France'})[0];
 var eurozone_countries = lookup.countries({currencies: 'EUR'});
 ```
 
+# es6
+```
+import {countries} from 'country-data-list';
+
+console.log(countries.all);
+
+// You can also use
+import {lookup} from 'country-data-list';
+
+// Match a value (grab first from array) case insensitive
+const france = lookup.countries({name: 'France'})[0];
+```
+
 It is very simple for now - feel free to contribute more helpful accessors.
 
 
@@ -135,9 +147,7 @@ to add are:
 
 ## How to contribute
 
-The final format is JSON, but it is easier to work with CSV. Hence in the `data`
-folder there are CSV files and scripts that convert them to JSON. Please don't
-edit the JSON directly, but do it via the CSV.
+You can change on JSON.
 
 These are the steps required:
 
