@@ -74,7 +74,7 @@ npm install country-data-list
 
 
 ## Example usage
-# es5
+* es5
 ``` javascript
 var countries        = require('country-data-list').countries,
     currencies       = require('country-data-list').currencies,
@@ -109,7 +109,7 @@ var france = lookup.countries({name: 'France'})[0];
 var eurozone_countries = lookup.countries({currencies: 'EUR'});
 ```
 
-# es6
+* es6
 ```
 import {countries} from 'country-data-list';
 
