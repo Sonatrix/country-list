@@ -1,6 +1,6 @@
 {
     "name": "country-data-list",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Data about countries - like their ISO codes and currencies",
     "homepage": "https://github.com/Sonatrix/country-list",
     "bugs": {
@@ -46,24 +46,24 @@
     },
     "devDependencies": {
         "babel-core": "6.26.3",
-        "babel-eslint": "8.2.3",
-        "babel-loader": "7.1.4",
+        "babel-eslint": "10.0.1",
+        "babel-loader": "8.0.4",
         "babel-plugin-transform-object-rest-spread": "^6.26.0",
-        "babel-preset-env": "1.6.1",
+        "babel-preset-env": "1.7.0",
         "babel-register": "6.26.0",
-        "chai": "4.1.2",
-        "eslint": "4.19.1",
-        "eslint-config-airbnb": "16.1.0",
-        "eslint-config-prettier": "^2.9.0",
-        "eslint-plugin-import": "^2.7.0",
-        "eslint-plugin-jsx-a11y": "^6.0.2",
-        "eslint-plugin-prettier": "^2.6.0",
-        "eslint-plugin-react": "^7.4.0",
-        "husky": "^0.14.3",
+        "chai": "4.2.0",
+        "eslint": "^5.6.1",
+        "eslint-config-airbnb": "^17.1.0",
+        "eslint-config-prettier": "^3.1.0",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-jsx-a11y": "^6.1.1",
+        "eslint-plugin-prettier": "^3.0.0",
+        "eslint-plugin-react": "^7.11.1",
+        "husky": "^1.1.0",
         "lint-staged": "^7.0.4",
         "mocha": "^5.1.1",
         "prettier": "^1.12.0",
-        "webpack": "4.7.0",
-        "webpack-cli": "^2.0.15"
+        "webpack": "4.20.2",
+        "webpack-cli": "^3.1.2"
     }
 }

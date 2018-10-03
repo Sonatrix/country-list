@@ -87,17 +87,21 @@ callingCodesAll.sort((a, b) => {
 
   if (splitA[0] < splitB[0]) {
     return -1;
-  } else if (splitA[0] > splitB[0]) {
+  }
+  if (splitA[0] > splitB[0]) {
     return 1;
   }
   //   Same - check split[1]
   if (splitA[1] === undefined && splitB[1] !== undefined) {
     return -1;
-  } else if (splitA[1] !== undefined && splitB[1] === undefined) {
+  }
+  if (splitA[1] !== undefined && splitB[1] === undefined) {
     return 1;
-  } else if (splitA[1] < splitB[1]) {
+  }
+  if (splitA[1] < splitB[1]) {
     return -1;
-  } else if (splitA[1] > splitB[1]) {
+  }
+  if (splitA[1] > splitB[1]) {
     return 1;
   }
   return 0;
