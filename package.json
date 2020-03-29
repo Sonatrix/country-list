@@ -8,14 +8,14 @@
     },
     "main": "dist/index.js",
     "lint-staged": {
-        "*/**/*.js": [
+        "*.js": [
             "eslint --fix",
             "prettier --config .prettierrc --write"
         ]
     },
     "husky": {
         "hooks": {
-          "pre-commit": "lint-staged"
+            "pre-commit": "lint-staged"
         }
     },
     "scripts": {
@@ -48,23 +48,23 @@
         "currency-symbol-map": "~4"
     },
     "devDependencies": {
-        "@babel/cli": "^7.7.7",
-        "@babel/core": "^7.7.7",
-        "@babel/preset-env": "^7.7.7",
-        "@babel/register": "^7.7.7",
-        "babel-eslint": "10.0.3",
+        "@babel/cli": "^7.8.4",
+        "@babel/core": "^7.9.0",
+        "@babel/preset-env": "^7.9.0",
+        "@babel/register": "^7.9.0",
+        "babel-eslint": "10.1.0",
         "chai": "4.2.0",
         "eslint": "^6.8.0",
-        "eslint-config-airbnb": "^18.0.1",
-        "eslint-config-prettier": "^6.9.0",
-        "eslint-plugin-import": "^2.19.1",
+        "eslint-config-airbnb": "^18.1.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-import": "^2.20.1",
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "eslint-plugin-prettier": "^3.1.2",
-        "eslint-plugin-react": "^7.17.0",
-        "husky": "^4.0.1",
-        "lint-staged": "^9.5.0",
-        "mocha": "^7.0.0",
-        "prettier": "^1.19.1",
+        "eslint-plugin-react": "^7.19.0",
+        "husky": "^4.2.3",
+        "lint-staged": "^10.0.9",
+        "mocha": "^7.1.1",
+        "prettier": "^2.0.2",
         "mixin-deep": ">=2.0.1",
         "lodash": ">=4.17.15",
         "set-value": ">=3.0.1"
