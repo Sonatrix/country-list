@@ -1,6 +1,6 @@
 {
     "name": "country-data-list",
-    "version": "1.1.9",
+    "version": "1.2.0",
     "description": "Data about countries - like their ISO codes and currencies",
     "homepage": "https://github.com/Sonatrix/country-list",
     "bugs": {
@@ -55,18 +55,15 @@
         "babel-eslint": "10.1.0",
         "chai": "4.2.0",
         "eslint": "^6.8.0",
-        "eslint-config-airbnb": "^18.1.0",
         "eslint-config-prettier": "^6.10.1",
         "eslint-plugin-import": "^2.20.1",
-        "eslint-plugin-jsx-a11y": "^6.2.3",
         "eslint-plugin-prettier": "^3.1.2",
-        "eslint-plugin-react": "^7.19.0",
         "husky": "^4.2.3",
         "lint-staged": "^10.0.9",
+        "lodash": ">=4.17.15",
+        "mixin-deep": ">=2.0.1",
         "mocha": "^7.1.1",
         "prettier": "^2.0.2",
-        "mixin-deep": ">=2.0.1",
-        "lodash": ">=4.17.15",
         "set-value": ">=3.0.1"
     }
 }

@@ -6,7 +6,7 @@
     'node': true,
   },
   'extends': [
-    'airbnb',
+    'eslint:recommended',
     'prettier',
   ],
   'plugins': [
@@ -20,9 +20,6 @@
   },
   parserOptions: {
     ecmaVersion: 6,
-    sourceType: 'module',
-    ecmaFeatures: {
-     "jsx": true
-    },
+    sourceType: 'module'
   },
 }
