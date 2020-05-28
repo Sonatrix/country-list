@@ -2,8 +2,8 @@ const search = (data, query) => {
   const q = Object.entries(query);
 
   return data.filter(
-    d =>
-      q.filter(v => {
+    (d) =>
+      q.filter((v) => {
         const prop = d[v[0]];
 
         if (Array.isArray(prop)) return prop.indexOf(v[1]) >= 0;
@@ -13,7 +13,7 @@ const search = (data, query) => {
   );
 };
 
-const init = o => ({
+const init = (o) => ({
   countries: search.bind(null, o.countries),
   currencies: search.bind(null, o.currencies),
   languages: search.bind(null, o.languages),

@@ -15,7 +15,7 @@ describe('calling codes', () => {
         it(`should contain codes for ${name}`, () => {
           assert(
             countryCallingCodes.every(
-              code => callingCodes.all.indexOf(code) > -1
+              (code) => callingCodes.all.indexOf(code) > -1
             )
           );
         });

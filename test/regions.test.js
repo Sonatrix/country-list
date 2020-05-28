@@ -4,9 +4,9 @@ import { countries, regions } from '../src/index';
 
 describe('regions', () => {
   describe("check region's countries are known", () => {
-    Object.keys(regions).forEach(key => {
+    Object.keys(regions).forEach((key) => {
       describe(key.toString(), () => {
-        regions[key].countries.forEach(country => {
+        regions[key].countries.forEach((country) => {
           it(country, () => {
             assert(countries[country]);
           });
@@ -17,11 +17,11 @@ describe('regions', () => {
 
   describe('check region countries exist', () => {
     let countriesAssigned = [];
-    Object.keys(regions).forEach(key => {
+    Object.keys(regions).forEach((key) => {
       const region = regions[key];
       describe(key.toString(), () => {
         if (!region.countries) {
-          region[key].countries.forEach(country => {
+          region[key].countries.forEach((country) => {
             countriesAssigned.push(country);
           });
         }
@@ -42,8 +42,8 @@ describe('regions', () => {
   describe('check all assigned countries are in regions', () => {
     const countriesAssigned = [];
     const countriesAvailable = [];
-    Object.keys(regions).forEach(key => {
-      regions[key].countries.forEach(country => {
+    Object.keys(regions).forEach((key) => {
+      regions[key].countries.forEach((country) => {
         countriesAssigned.push(country);
       });
     });
@@ -55,7 +55,7 @@ describe('regions', () => {
     });
 
     const difference = countriesAvailable.filter(
-      data => !countriesAssigned.includes(data)
+      (data) => !countriesAssigned.includes(data)
     );
 
     it('are all used', () => {

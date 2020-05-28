@@ -6,9 +6,9 @@ const { lookup, countries, currencies, languages } = countryData;
 
 describe('lookup', () => {
   describe('check countries by currency', () => {
-    countries.all.forEach(country => {
+    countries.all.forEach((country) => {
       describe(`when country is ${country.name}`, () => {
-        country.currencies.forEach(currency => {
+        country.currencies.forEach((currency) => {
           it(currency, () => {
             assert.include(lookup.countries({ currencies: currency }), country);
           });
@@ -24,7 +24,7 @@ describe('lookup', () => {
   });
 
   describe('check countries by name', () => {
-    countries.all.forEach(country => {
+    countries.all.forEach((country) => {
       const { name } = country;
       describe(`when country is ${name}`, () => {
         it(`should be present`, () => {
@@ -35,7 +35,7 @@ describe('lookup', () => {
   });
 
   describe('check currencies by code', () => {
-    currencies.all.forEach(currency => {
+    currencies.all.forEach((currency) => {
       const { code, name } = currency;
       describe(`when currency is ${name}`, () => {
         it(`should be present`, () => {
@@ -46,7 +46,7 @@ describe('lookup', () => {
   });
 
   describe('check languages by name', () => {
-    languages.all.forEach(language => {
+    languages.all.forEach((language) => {
       const { name } = language;
       describe(`when language is ${name}`, () => {
         it(`should be present`, () => {

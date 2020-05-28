@@ -9,12 +9,12 @@ const assertValidReferences = (
   listKey
 ) => {
   const validIds = countryData[referenceListName].all.map(
-    data => data[referenceIdKey]
+    (data) => data[referenceIdKey]
   );
-  countryData[listName].all.forEach(item => {
+  countryData[listName].all.forEach((item) => {
     describe(`${listKey} of ${item.name}`, () => {
       it(`should be a valid reference to ${referenceIdKey} of ${referenceListName}`, () => {
-        item[listKey].forEach(id => {
+        item[listKey].forEach((id) => {
           assert(
             validIds.includes(id),
             `Expected ${id} in ${listKey} of ${listName} to be a valid entry in ${referenceListName}`

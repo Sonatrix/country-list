@@ -11,7 +11,7 @@ const countries = {
   all: countriesAll,
 };
 
-countriesAll.forEach(country => {
+countriesAll.forEach((country) => {
   //   prefer assigned country codes over inactive ones
   const { status } = countries[country.alpha2] || {};
   if (!status || status === 'deleted') {
@@ -28,7 +28,7 @@ const currencies = {
   all: currenciesAll,
 };
 
-currenciesAll.forEach(currency => {
+currenciesAll.forEach((currency) => {
   //  If the symbol isn't available, default to the currency code
 
   let symbolCode = getSymbol(currency.code);
@@ -47,7 +47,7 @@ const languages = {
 //   Note that for the languages there are several entries with the same alpha3 -
 //   eg Dutch and Flemish. Not sure how to best deal with that - here whichever
 //   comes last wins.
-languagesAll.forEach(language => {
+languagesAll.forEach((language) => {
   languages[language.alpha2] = language;
   languages[language.bibliographic] = language;
   languages[language.alpha3] = language;
@@ -69,7 +69,7 @@ const callingCodesAll = countriesAll.reduce((codes, country) => {
     callingCountries[alpha2] = country;
     callingCountries[alpha3] = country;
 
-    countryCallingCodes.forEach(code => {
+    countryCallingCodes.forEach((code) => {
       if (codes.indexOf(code) === -1) {
         codes.push(code);
       }
@@ -81,7 +81,7 @@ const callingCodesAll = countriesAll.reduce((codes, country) => {
 delete callingCountries['']; //   remove empty alpha3s
 
 callingCodesAll.sort((a, b) => {
-  const parse = str => +str;
+  const parse = (str) => +str;
   const splitA = a.split(' ').map(parse);
   const splitB = b.split(' ').map(parse);
 
