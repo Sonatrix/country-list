@@ -2727,7 +2727,7 @@ var _default = [{
   emoji: '🇻🇳',
   ioc: 'VIE',
   languages: ['vie'],
-  name: 'Vietnam',
+  name: 'VietNam',
   status: 'assigned'
 }, {
   alpha2: 'VU',

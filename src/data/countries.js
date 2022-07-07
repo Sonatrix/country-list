@@ -2996,7 +2996,7 @@ export default [
     emoji: '🇻🇳',
     ioc: 'VIE',
     languages: ['vie'],
-    name: 'Viet Nam',
+    name: 'VietNam',
     status: 'assigned',
   },
   {

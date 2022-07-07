@@ -1,6 +1,6 @@
 {
     "name": "country-data-list",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "Data about countries - like their ISO codes and currencies",
     "homepage": "https://github.com/Sonatrix/country-list",
     "bugs": {
@@ -62,7 +62,7 @@
         "lint-staged": "^10.5.4",
         "lodash": ">=4.17.21",
         "mixin-deep": ">=2.0.1",
-        "mocha": "^8.3.1",
+        "mocha": "^10.0.0",
         "prettier": "^2.2.1",
         "set-value": ">=3.0.2"
     }
