@@ -908,8 +908,7 @@ export default [
   {
     code: 'USS',
     decimals: 2,
-    name:
-      'United States dollar (same day) (funds code) (one source[who?] claims it is no longer used, but it is still on the ISO 4217-MA list)',
+    name: 'United States dollar (same day) (funds code) (one source[who?] claims it is no longer used, but it is still on the ISO 4217-MA list)',
     number: '998',
   },
   {

@@ -1146,7 +1146,7 @@ var _default = [{
   alpha2: 'HR',
   alpha3: 'HRV',
   countryCallingCodes: ['+385'],
-  currencies: ['HRK'],
+  currencies: ['EUR'],
   emoji: '🇭🇷',
   ioc: 'CRO',
   languages: ['hrv'],

@@ -181,3 +181,6 @@ git push
 The currency data was copied from the [Wikipedia ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) page.
 
 The country calling codes came from the  [Wikipedia country calling codes](http://en.wikipedia.org/wiki/List_of_country_calling_codes) page.
+
+
+## Added typescript definations

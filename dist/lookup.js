@@ -4,7 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
 var search = function search(data, query) {
   var q = Object.entries(query);
   return data.filter(function (d) {
@@ -15,7 +14,6 @@ var search = function search(data, query) {
     }).length === q.length;
   });
 };
-
 var init = function init(o) {
   return {
     countries: search.bind(null, o.countries),
@@ -23,6 +21,5 @@ var init = function init(o) {
     languages: search.bind(null, o.languages)
   };
 };
-
 var _default = init;
 exports["default"] = _default;

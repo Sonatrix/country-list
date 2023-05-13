@@ -360,7 +360,6 @@ const australia = {
     // source is http://en.wikipedia.org/wiki/Oceania
     'AU', // Australia
     'NF', // Norfolk Island
-    'NZ', // New Zealand
   ],
 };
 
@@ -405,6 +404,7 @@ const polynesia = {
     'TO', // Tonga
     'TV', // Tuvalu
     'WF', // Wallis and Futuna
+    'NZ', // New Zealand https://worldpopulationreview.com/country-rankings/polynesian-countries
   ],
 };
 
