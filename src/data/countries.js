@@ -2469,7 +2469,7 @@ export default [
     countryCallingCodes: ['+65'],
     currencies: ['SGD'],
     emoji: '🇸🇬',
-    ioc: 'SIN',
+    ioc: 'SGP',
     languages: ['eng', 'zho', 'msa', 'tam'],
     name: 'Singapore',
     status: 'assigned',
