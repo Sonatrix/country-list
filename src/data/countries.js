@@ -2133,7 +2133,7 @@ export default [
     currencies: ['NZD'],
     emoji: '🇳🇿',
     ioc: 'NZL',
-    languages: ['eng'],
+    languages: ['eng', 'mri'],
     name: 'New Zealand',
     status: 'assigned',
   },
