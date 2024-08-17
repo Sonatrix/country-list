@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 
-import * as countryData from '../src/index';
+import * as countryData from '../src/index.js';
 
 const assertValidReferences = (
   referenceListName,

@@ -21,5 +21,4 @@ var init = function init(o) {
     languages: search.bind(null, o.languages)
   };
 };
-var _default = init;
-exports["default"] = _default;
+var _default = exports["default"] = init;

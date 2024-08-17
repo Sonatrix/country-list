@@ -1,6 +1,6 @@
 "use strict";
 
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -13,20 +13,19 @@ Object.defineProperty(exports, "continents", {
 });
 exports.regions = exports.lookup = exports.languages = exports.currencies = exports.countries = void 0;
 var _currencySymbolMap = _interopRequireDefault(require("currency-symbol-map"));
-var _continents = _interopRequireDefault(require("./data/continents"));
-var regions = _interopRequireWildcard(require("./data/regions"));
+var _continents = _interopRequireDefault(require("./data/continents.js"));
+var regions = _interopRequireWildcard(require("./data/regions.js"));
 exports.regions = regions;
-var _countries = _interopRequireDefault(require("./data/countries"));
-var _currencies = _interopRequireDefault(require("./data/currencies"));
-var _languages = _interopRequireDefault(require("./data/languages"));
-var _lookup = _interopRequireDefault(require("./lookup"));
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var countries = {
+var _countries = _interopRequireDefault(require("./data/countries.js"));
+var _currencies = _interopRequireDefault(require("./data/currencies.js"));
+var _languages = _interopRequireDefault(require("./data/languages.js"));
+var _lookup = _interopRequireDefault(require("./lookup.js"));
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+var countries = exports.countries = {
   all: _countries["default"]
 };
-exports.countries = countries;
 _countries["default"].forEach(function (country) {
   //   prefer assigned country codes over inactive ones
   var _ref = countries[country.alpha2] || {},
@@ -40,10 +39,9 @@ _countries["default"].forEach(function (country) {
     countries[country.alpha3] = country;
   }
 });
-var currencies = {
+var currencies = exports.currencies = {
   all: _currencies["default"]
 };
-exports.currencies = currencies;
 _currencies["default"].forEach(function (currency) {
   //  If the symbol isn't available, default to the currency code
 
@@ -56,29 +54,26 @@ _currencies["default"].forEach(function (currency) {
   });
   currencies[currency.code] = newCurrency;
 });
-var languages = {
+var languages = exports.languages = {
   all: _languages["default"]
 };
 
 //   Note that for the languages there are several entries with the same alpha3 -
 //   eg Dutch and Flemish. Not sure how to best deal with that - here whichever
 //   comes last wins.
-exports.languages = languages;
 _languages["default"].forEach(function (language) {
   languages[language.alpha2] = language;
   languages[language.bibliographic] = language;
   languages[language.alpha3] = language;
 });
-var lookup = (0, _lookup["default"])({
+var lookup = exports.lookup = (0, _lookup["default"])({
   countries: _countries["default"],
   currencies: _currencies["default"],
   languages: _languages["default"]
 });
-exports.lookup = lookup;
-var callingCountries = {
+var callingCountries = exports.callingCountries = {
   all: []
 };
-exports.callingCountries = callingCountries;
 var callingCodesAll = _countries["default"].reduce(function (codes, country) {
   var countryCallingCodes = country.countryCallingCodes,
     alpha2 = country.alpha2,
@@ -124,7 +119,6 @@ callingCodesAll.sort(function (a, b) {
   }
   return 0;
 });
-var callingCodes = {
+var callingCodes = exports.callingCodes = {
   all: callingCodesAll
 };
-exports.callingCodes = callingCodes;

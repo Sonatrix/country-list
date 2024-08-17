@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 
-import { languages } from '../src/index';
+import { languages } from '../src/index.js';
 
 describe('languages', () => {
   describe('all', () => {

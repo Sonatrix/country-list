@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-var _default = [{
+var _default = exports["default"] = [{
   alpha2: 'AC',
   alpha3: '',
   countryCallingCodes: ['+247'],
@@ -1943,7 +1943,7 @@ var _default = [{
   currencies: ['NZD'],
   emoji: '🇳🇿',
   ioc: 'NZL',
-  languages: ['eng'],
+  languages: ['eng', 'mri'],
   name: 'New Zealand',
   status: 'assigned'
 }, {
@@ -2248,7 +2248,7 @@ var _default = [{
   countryCallingCodes: ['+65'],
   currencies: ['SGD'],
   emoji: '🇸🇬',
-  ioc: 'SIN',
+  ioc: 'SGP',
   languages: ['eng', 'zho', 'msa', 'tam'],
   name: 'Singapore',
   status: 'assigned'
@@ -2856,4 +2856,3 @@ var _default = [{
   name: 'Zimbabwe',
   status: 'assigned'
 }];
-exports["default"] = _default;

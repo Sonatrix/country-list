@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-var _default = [{
+var _default = exports["default"] = [{
   alpha2: 'aa',
   alpha3: 'aar',
   bibliographic: '',
@@ -2825,4 +2825,3 @@ var _default = [{
   bibliographic: '',
   name: 'Zazaki'
 }];
-exports["default"] = _default;

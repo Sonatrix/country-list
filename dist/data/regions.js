@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.westernEurope = exports.westernAsia = exports.westAfrica = exports.southernEurope = exports.southernAsia = exports.southernAfrica = exports.southeastAsia = exports.southAmerica = exports.polynesia = exports.northernEurope = exports.northernAmerica = exports.northAfrica = exports.micronesia = exports.melanesia = exports.easternEurope = exports.eastAsia = exports.eastAfrica = exports.centralAsia = exports.centralAmerica = exports.centralAfrica = exports.caribbean = exports.australia = exports.antartica = void 0;
-var centralAsia = {
+var centralAsia = exports.centralAsia = {
   name: 'Central Asia',
   countries: [
   // source is http://en.wikipedia.org/wiki/Central_Asia
@@ -19,8 +19,7 @@ var centralAsia = {
   'UZ' // Uzbekistan
   ]
 };
-exports.centralAsia = centralAsia;
-var southernAsia = {
+var southernAsia = exports.southernAsia = {
   name: 'Southern Asia',
   countries: [
   // source is http://en.wikipedia.org/wiki/South_Asia
@@ -45,8 +44,7 @@ var southernAsia = {
   'LK' // Sri Lanka
   ]
 };
-exports.southernAsia = southernAsia;
-var southeastAsia = {
+var southeastAsia = exports.southeastAsia = {
   name: 'Southeast Asia',
   countries: [
   // source is http://en.wikipedia.org/wiki/Southeast_Asia
@@ -77,8 +75,7 @@ var southeastAsia = {
   'VN' // Vietnam
   ]
 };
-exports.southeastAsia = southeastAsia;
-var eastAsia = {
+var eastAsia = exports.eastAsia = {
   name: 'East Asia',
   countries: [
   // source is http://en.wikipedia.org/wiki/East_Asia
@@ -99,8 +96,7 @@ var eastAsia = {
   'TW' // Taiwan
   ]
 };
-exports.eastAsia = eastAsia;
-var westernAsia = {
+var westernAsia = exports.westernAsia = {
   name: 'Western Asia',
   countries: [
   // source is http://en.wikipedia.org/wiki/Western_Asia
@@ -137,8 +133,7 @@ var westernAsia = {
   'YE' // Yemen
   ]
 };
-exports.westernAsia = westernAsia;
-var centralAfrica = {
+var centralAfrica = exports.centralAfrica = {
   name: 'Central Aftrica',
   countries: [
   // source is http://en.wikipedia.org/wiki/Central_Africa
@@ -161,8 +156,7 @@ var centralAfrica = {
   'ST' // São Tomé and Príncipe
   ]
 };
-exports.centralAfrica = centralAfrica;
-var northAfrica = {
+var northAfrica = exports.northAfrica = {
   name: 'North Africa',
   countries: [
   // source is http://en.wikipedia.org/wiki/North_Africa
@@ -181,8 +175,7 @@ var northAfrica = {
   'EH' // Western Sahara
   ]
 };
-exports.northAfrica = northAfrica;
-var southernAfrica = {
+var southernAfrica = exports.southernAfrica = {
   name: 'Southern Africa',
   countries: [
   // source is http://en.wikipedia.org/wiki/Southern_Africa
@@ -197,8 +190,7 @@ var southernAfrica = {
   'SZ' // Swaziland
   ]
 };
-exports.southernAfrica = southernAfrica;
-var eastAfrica = {
+var eastAfrica = exports.eastAfrica = {
   name: 'East Africa',
   countries: [
   // source is http://en.wikipedia.org/wiki/East_Africa
@@ -243,8 +235,7 @@ var eastAfrica = {
   'ZW' // Zimbabwe
   ]
 };
-exports.eastAfrica = eastAfrica;
-var westAfrica = {
+var westAfrica = exports.westAfrica = {
   name: 'West Africa',
   countries: [
   // source is http://en.wikipedia.org/wiki/West_Africa
@@ -283,8 +274,7 @@ var westAfrica = {
   'TG' // Togo
   ]
 };
-exports.westAfrica = westAfrica;
-var centralAmerica = {
+var centralAmerica = exports.centralAmerica = {
   name: 'Central America',
   countries: [
   // source is http://en.wikipedia.org/wiki/Central_America
@@ -303,8 +293,7 @@ var centralAmerica = {
   'PA' // Panama
   ]
 };
-exports.centralAmerica = centralAmerica;
-var northernAmerica = {
+var northernAmerica = exports.northernAmerica = {
   name: 'Northern America',
   countries: [
   // source is http://en.wikipedia.org/wiki/Northern_America
@@ -321,8 +310,7 @@ var northernAmerica = {
   'US' // United States
   ]
 };
-exports.northernAmerica = northernAmerica;
-var caribbean = {
+var caribbean = exports.caribbean = {
   name: 'Caribbean',
   countries: [
   // source is http://en.wikipedia.org/wiki/Caribbean
@@ -383,8 +371,7 @@ var caribbean = {
   'VI' // United States Virgin Islands
   ]
 };
-exports.caribbean = caribbean;
-var southAmerica = {
+var southAmerica = exports.southAmerica = {
   name: 'South America',
   countries: [
   // source is http://en.wikipedia.org/wiki/South_America
@@ -417,8 +404,7 @@ var southAmerica = {
   'VE' // Venezuela
   ]
 };
-exports.southAmerica = southAmerica;
-var antartica = {
+var antartica = exports.antartica = {
   name: 'Antartica',
   countries: [
   // source is http://en.wikipedia.org/wiki/Antarctica
@@ -433,8 +419,7 @@ var antartica = {
   'GS' // South Georgia and the South Sandwich Islands
   ]
 };
-exports.antartica = antartica;
-var northernEurope = {
+var northernEurope = exports.northernEurope = {
   name: 'Northern Europe',
   countries: [
   // source is http://en.wikipedia.org/wiki/Northern_Europe
@@ -471,8 +456,7 @@ var northernEurope = {
   'GB' // United Kingdom
   ]
 };
-exports.northernEurope = northernEurope;
-var southernEurope = {
+var southernEurope = exports.southernEurope = {
   name: 'Southern Europe',
   countries: [
   // source is http://en.wikipedia.org/wiki/Southern_Europe
@@ -511,8 +495,7 @@ var southernEurope = {
   'ES' // Spain
   ]
 };
-exports.southernEurope = southernEurope;
-var easternEurope = {
+var easternEurope = exports.easternEurope = {
   name: 'Eastern Europe',
   countries: [
   // source is http://en.wikipedia.org/wiki/Eastern_Europe
@@ -539,8 +522,7 @@ var easternEurope = {
   'UA' // Ukraine
   ]
 };
-exports.easternEurope = easternEurope;
-var westernEurope = {
+var westernEurope = exports.westernEurope = {
   name: 'Western Europe',
   countries: [
   // source is http://en.wikipedia.org/wiki/Western_Europe
@@ -563,8 +545,7 @@ var westernEurope = {
   'CH' // Switzerland
   ]
 };
-exports.westernEurope = westernEurope;
-var australia = {
+var australia = exports.australia = {
   name: 'Australia',
   countries: [
   // source is http://en.wikipedia.org/wiki/Oceania
@@ -573,8 +554,7 @@ var australia = {
   'NF' // Norfolk Island
   ]
 };
-exports.australia = australia;
-var melanesia = {
+var melanesia = exports.melanesia = {
   name: 'Melanesia',
   countries: [
   // source is http://en.wikipedia.org/wiki/Oceania
@@ -589,8 +569,7 @@ var melanesia = {
   'VU' // Vanuatu
   ]
 };
-exports.melanesia = melanesia;
-var micronesia = {
+var micronesia = exports.micronesia = {
   name: 'Micronesia',
   countries: [
   // source is http://en.wikipedia.org/wiki/Oceania
@@ -611,8 +590,7 @@ var micronesia = {
   'UM' // United States Minor Outlying Islands
   ]
 };
-exports.micronesia = micronesia;
-var polynesia = {
+var polynesia = exports.polynesia = {
   name: 'Polynesia',
   countries: [
   // source is http://en.wikipedia.org/wiki/Oceania
@@ -639,4 +617,3 @@ var polynesia = {
   'NZ' // New Zealand https://worldpopulationreview.com/country-rankings/polynesian-countries
   ]
 };
-exports.polynesia = polynesia;

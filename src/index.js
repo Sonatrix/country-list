@@ -1,11 +1,11 @@
 import getSymbol from 'currency-symbol-map';
 
-import continents from './data/continents';
-import * as regions from './data/regions';
-import countriesAll from './data/countries';
-import currenciesAll from './data/currencies';
-import languagesAll from './data/languages';
-import lookupFn from './lookup';
+import continents from './data/continents.js';
+import * as regions from './data/regions.js';
+import countriesAll from './data/countries.js';
+import currenciesAll from './data/currencies.js';
+import languagesAll from './data/languages.js';
+import lookupFn from './lookup.js';
 
 const countries = {
   all: countriesAll,

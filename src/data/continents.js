@@ -1,4 +1,4 @@
-import * as regions from './regions';
+import * as regions from './regions.js';
 
 const asia = {
   name: 'Asia',

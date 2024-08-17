@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-var _default = [{
+var _default = exports["default"] = [{
   code: 'AED',
   decimals: 2,
   name: 'United Arab Emirates dirham',
@@ -900,4 +900,3 @@ var _default = [{
   name: 'Estonian kroon',
   number: '233'
 }];
-exports["default"] = _default;
