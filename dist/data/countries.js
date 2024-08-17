@@ -1647,7 +1647,7 @@ var _default = exports["default"] = [{
   emoji: '🇲🇰',
   ioc: 'MKD',
   languages: ['mkd'],
-  name: 'Macedonia, The Former Yugoslav Republic Of',
+  name: 'North Macedonia',
   status: 'assigned'
 }, {
   alpha2: 'ML',
@@ -2419,7 +2419,7 @@ var _default = exports["default"] = [{
   emoji: '🇸🇿',
   ioc: 'SWZ',
   languages: ['eng', 'ssw'],
-  name: 'Swaziland',
+  name: 'Eswatini',
   status: 'assigned'
 }, {
   alpha2: 'TA',
