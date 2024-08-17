@@ -1807,7 +1807,7 @@ export default [
     emoji: '🇲🇰',
     ioc: 'MKD',
     languages: ['mkd'],
-    name: 'Macedonia, The Former Yugoslav Republic Of',
+    name: 'North Macedonia',
     status: 'assigned',
   },
   {
@@ -2657,7 +2657,7 @@ export default [
     emoji: '🇸🇿',
     ioc: 'SWZ',
     languages: ['eng', 'ssw'],
-    name: 'Swaziland',
+    name: 'Eswatini',
     status: 'assigned',
   },
   {
