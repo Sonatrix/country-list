@@ -24,11 +24,11 @@
         "test": "mocha",
         "lint": "eslint src",
         "prepare": "npm run lint --fix && npm run test && npm run build",
-        "prettify": "./node_modules/.bin/prettier --config .prettierrc --write '*/**/*.js'"
+        "prettify": "prettier --config .prettierrc --write '*/**/*.js'"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Sonatrix/country-list.git"
+        "url": "git+https://github.com/Sonatrix/country-list.git"
     },
     "keywords": [
         "data",
