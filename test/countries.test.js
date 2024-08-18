@@ -18,6 +18,7 @@ describe('countries', () => {
     });
     it('should find USA emoji', () => {
       assert.equal(countriesAll.US.emoji, '🇺🇸');
+      assert.equal(countriesAll.USA.emoji, '🇺🇸');
     });
     it('should prefer assigned alpha2 country codes', () => {
       assert.equal(countriesAll.SK.name, 'Slovakia');
