@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 
-import * as countryData from '../src/index.js';
+import * as countryData from '../src/index';
 
 const { lookup, countries, currencies, languages } = countryData;
 

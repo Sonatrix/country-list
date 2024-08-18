@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 
-import * as countryData from '../src/index.js';
+import * as countryData from '../src/index';
 
 const { countries: countriesAll, currencies, languages } = countryData;
 
@@ -15,6 +15,9 @@ describe('countries', () => {
     it('should find USA', () => {
       assert.equal(countriesAll.BE.name, 'Belgium');
       assert.equal(countriesAll.US.name, 'United States');
+    });
+    it('should find USA emoji', () => {
+      assert.equal(countriesAll.US.emoji, '🇺🇸');
     });
     it('should prefer assigned alpha2 country codes', () => {
       assert.equal(countriesAll.SK.name, 'Slovakia');
