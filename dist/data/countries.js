@@ -6,10 +6,10 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _default = exports["default"] = [{
   alpha2: 'AC',
-  alpha3: '',
+  alpha3: 'ASC',
   countryCallingCodes: ['+247'],
   currencies: ['USD'],
-  emoji: '',
+  emoji: '🇦🇨',
   ioc: 'SHP',
   languages: ['eng'],
   name: 'Ascension Island',
@@ -551,10 +551,10 @@ var _default = exports["default"] = [{
   status: 'assigned'
 }, {
   alpha2: 'CP',
-  alpha3: '',
+  alpha3: 'CPT',
   countryCallingCodes: [],
   currencies: ['EUR'],
-  emoji: '',
+  emoji: '🇨🇵',
   ioc: '',
   languages: [],
   name: 'Clipperton Island',
@@ -677,10 +677,10 @@ var _default = exports["default"] = [{
   status: 'assigned'
 }, {
   alpha2: 'DG',
-  alpha3: '',
+  alpha3: 'DGA',
   countryCallingCodes: [],
   currencies: ['USD'],
-  emoji: '',
+  emoji: '🇩🇬',
   ioc: '',
   languages: [],
   name: 'Diego Garcia',
@@ -749,7 +749,7 @@ var _default = exports["default"] = [{
   alpha3: '',
   countryCallingCodes: [],
   currencies: ['EUR'],
-  emoji: '',
+  emoji: '🇪🇦',
   ioc: '',
   languages: [],
   name: 'Ceuta, Mulilla',
@@ -826,7 +826,7 @@ var _default = exports["default"] = [{
   status: 'assigned'
 }, {
   alpha2: 'EU',
-  alpha3: '',
+  alpha3: 'EUE',
   countryCallingCodes: ['+388'],
   currencies: ['EUR'],
   emoji: '🇪🇺',
@@ -905,7 +905,7 @@ var _default = exports["default"] = [{
   status: 'assigned'
 }, {
   alpha2: 'FX',
-  alpha3: '',
+  alpha3: 'FXX',
   countryCallingCodes: ['+241'],
   currencies: ['EUR'],
   emoji: '',
@@ -1186,7 +1186,7 @@ var _default = exports["default"] = [{
   alpha3: '',
   countryCallingCodes: [],
   currencies: ['EUR'],
-  emoji: '',
+  emoji: '🇮🇨',
   ioc: '',
   languages: [],
   name: 'Canary Islands',
@@ -2373,7 +2373,7 @@ var _default = exports["default"] = [{
   status: 'assigned'
 }, {
   alpha2: 'SU',
-  alpha3: '',
+  alpha3: 'SUN',
   countryCallingCodes: [],
   currencies: ['RUB'],
   emoji: '',
@@ -2423,10 +2423,10 @@ var _default = exports["default"] = [{
   status: 'assigned'
 }, {
   alpha2: 'TA',
-  alpha3: '',
+  alpha3: 'TAA',
   countryCallingCodes: ['+290'],
   currencies: ['GBP'],
-  emoji: '',
+  emoji: '🇹🇦',
   ioc: '',
   languages: [],
   name: 'Tristan de Cunha',
@@ -2770,10 +2770,10 @@ var _default = exports["default"] = [{
   status: 'assigned'
 }, {
   alpha2: 'XK',
-  alpha3: '',
+  alpha3: 'XKX',
   countryCallingCodes: ['+383'],
   currencies: ['EUR'],
-  emoji: '',
+  emoji: '🇽🇰',
   ioc: 'KOS',
   languages: ['sqi', 'srp', 'bos', 'tur', 'rom'],
   name: 'Kosovo',
@@ -2783,7 +2783,7 @@ var _default = exports["default"] = [{
   alpha3: 'YMD',
   countryCallingCodes: ['+967'],
   currencies: [],
-  ioc: '',
+  ioc: '🇾🇪',
   languages: [],
   name: 'Yemen, Democratic',
   status: 'deleted'
