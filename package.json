@@ -1,6 +1,6 @@
 {
     "name": "country-data-list",
-    "version": "1.3.4",
+    "version": "1.3.5",
     "description": "Data about countries - like their ISO codes and currencies",
     "homepage": "https://github.com/Sonatrix/country-list",
     "bugs": {
@@ -27,7 +27,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Sonatrix/country-list.git"
+        "url": "git@github.com:sonatrix/country-list.git"
     },
     "keywords": [
         "data",
