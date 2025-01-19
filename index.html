@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='dist/country-data-list.min.js'></script>
+    <script>
+        window.addEventListener("load", (event) => {
+            console.log("Page is fully loaded");
+            document.getElementById('cButton').addEventListener('click', () => {
+                const currencyCode = document.getElementById("currency").value.trim();
+                const symbol = window.CountryDataList.getSymbolFromCurrency(currencyCode);
+                document.getElementById('output').textContent = symbol;
+            });
+        });
+    </script>
+    <title>Country Data List</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Country Data List</h1>
+    </header>
+    <main>
+        <input type="text" id="currency" placeholder="Enter Currency Code">
+        <button id="cButton">Submit</button>
+
+        <!-- Output Section -->
+        <p>Result is <span id="output"></span></p>
+    </main>
+    <footer>
+        <p>&copy; 2025 Country Data List. All rights reserved.</p>
+    </footer>
+</body>
+</html>

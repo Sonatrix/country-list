@@ -1,4 +1,10 @@
-import getSymbol from 'currency-symbol-map';
+import {
+  currencySymbolMap,
+  getSymbolFromCurrency,
+  getNameFromCurrency,
+  getSafeSymbolFromCurrency,
+  getSafeNameFromCurrency,
+} from './data/currency-symbol';
 
 import continents from './data/continents';
 import * as regions from './data/regions';
@@ -31,7 +37,7 @@ const currencies = {
 currenciesAll.forEach((currency) => {
   //  If the symbol isn't available, default to the currency code
 
-  let symbolCode = getSymbol(currency.code);
+  let symbolCode = getSymbolFromCurrency(currency.code);
   if (symbolCode === '?') {
     symbolCode = currency.code;
   }
@@ -120,4 +126,9 @@ export {
   lookup,
   callingCountries,
   callingCodes,
+  currencySymbolMap,
+  getSymbolFromCurrency,
+  getNameFromCurrency,
+  getSafeSymbolFromCurrency,
+  getSafeNameFromCurrency,
 };

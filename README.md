@@ -65,6 +65,17 @@ A list of languages provided by [ISO 639-2](http://en.wikipedia.org/wiki/ISO_639
 
 To make finding easier there are utility methods that can search the countries and currencies. See examples below.
 
+### In the browser
+
+Include the dist via the script tag
+
+```html
+<script src='dist/country-data-list.min.js' />
+<script>
+  window.CountryDataList.getSymbolFromCurrency('USD') //=> '$'
+</script>
+```
+
 
 ## Installing
 
@@ -136,9 +147,13 @@ to add are:
   * Coordinates (centroid, bounding box, etc)
 
 ### Currencies
-
-  * other currency that it is [pegged](http://en.wikipedia.org/wiki/Fixed_exchange_rate) to
-
+# Added Currency Symbol Maps
+* removed External Dependency for currency-symbol-map. Now we have 4 methods
+*  currencySymbolMap => returns list of currency with name, number, symbol
+*  getSymbolFromCurrency,
+*  getNameFromCurrency,
+*  getSafeSymbolFromCurrency,
+*  getSafeNameFromCurrency
 
 ## Other similar bits of code
 
