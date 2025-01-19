@@ -13,7 +13,7 @@ module.exports = [
   ...compat.config({
     env: {
       browser: true,
-      es2021: true,
+      es2024: true,
       node: true,
     },
     ignorePatterns: [
@@ -25,7 +25,7 @@ module.exports = [
       "plugin:eslint-plugin-prettier/recommended"
     ],
     parserOptions: {
-      ecmaVersion: 6,
+      ecmaVersion: 2024,
       sourceType: "module"
     },
     rules: {

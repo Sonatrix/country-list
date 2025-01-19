@@ -11,8 +11,39 @@ Object.defineProperty(exports, "continents", {
     return _continents["default"];
   }
 });
-exports.regions = exports.lookup = exports.languages = exports.currencies = exports.countries = void 0;
-var _currencySymbolMap = _interopRequireDefault(require("currency-symbol-map"));
+exports.currencies = exports.countries = void 0;
+Object.defineProperty(exports, "currencySymbolMap", {
+  enumerable: true,
+  get: function get() {
+    return _currencySymbol.currencySymbolMap;
+  }
+});
+Object.defineProperty(exports, "getNameFromCurrency", {
+  enumerable: true,
+  get: function get() {
+    return _currencySymbol.getNameFromCurrency;
+  }
+});
+Object.defineProperty(exports, "getSafeNameFromCurrency", {
+  enumerable: true,
+  get: function get() {
+    return _currencySymbol.getSafeNameFromCurrency;
+  }
+});
+Object.defineProperty(exports, "getSafeSymbolFromCurrency", {
+  enumerable: true,
+  get: function get() {
+    return _currencySymbol.getSafeSymbolFromCurrency;
+  }
+});
+Object.defineProperty(exports, "getSymbolFromCurrency", {
+  enumerable: true,
+  get: function get() {
+    return _currencySymbol.getSymbolFromCurrency;
+  }
+});
+exports.regions = exports.lookup = exports.languages = void 0;
+var _currencySymbol = require("./data/currency-symbol");
 var _continents = _interopRequireDefault(require("./data/continents"));
 var regions = _interopRequireWildcard(require("./data/regions"));
 exports.regions = regions;
@@ -45,7 +76,7 @@ var currencies = exports.currencies = {
 _currencies["default"].forEach(function (currency) {
   //  If the symbol isn't available, default to the currency code
 
-  var symbolCode = (0, _currencySymbolMap["default"])(currency.code);
+  var symbolCode = (0, _currencySymbol.getSymbolFromCurrency)(currency.code);
   if (symbolCode === '?') {
     symbolCode = currency.code;
   }

@@ -20,9 +20,14 @@ export namespace callingCountries {
 export namespace callingCodes {
     export { callingCodesAll as all };
 }
+import { currencySymbolMap } from './data/currency-symbol';
+import { getSymbolFromCurrency } from './data/currency-symbol';
+import { getNameFromCurrency } from './data/currency-symbol';
+import { getSafeSymbolFromCurrency } from './data/currency-symbol';
+import { getSafeNameFromCurrency } from './data/currency-symbol';
 import countriesAll from './data/countries';
 import currenciesAll from './data/currencies';
 import languagesAll from './data/languages';
 declare const callingCodesAll: any[];
-export { continents, regions };
+export { continents, regions, currencySymbolMap, getSymbolFromCurrency, getNameFromCurrency, getSafeSymbolFromCurrency, getSafeNameFromCurrency };
 //# sourceMappingURL=index.d.ts.map
