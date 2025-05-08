@@ -522,7 +522,7 @@ export default [
     number: '426',
   },
   {
-    code: 'EUR',
+    code: 'LTL',
     decimals: 2,
     name: 'Lithuanian litas',
     number: '440',
