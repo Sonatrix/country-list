@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 
-import { countries, regions } from '../src/index';
+import { countries, regions } from '../src/index.js';
 
 describe('regions', () => {
   describe("check region's countries are known", () => {

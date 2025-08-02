@@ -3,7 +3,7 @@ import { assert } from 'chai';
 import {
   getSymbolFromCurrency,
   currencySymbolMap,
-} from '../src/data/currency-symbol';
+} from '../src/data/currency-symbol.js';
 
 describe('currency-symbol', () => {
   describe('getSymbolFromCurrency(): valid params', () => {

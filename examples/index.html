@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Data List</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Country Data List</h1>
+    </header>
+    <main>
+        <input type="text" id="currency" placeholder="Enter Currency Code">
+        <button id="cButton">Submit</button>
+
+        <!-- Output Section -->
+        <p>Result is <span id="output"></span></p>
+    </main>
+    <footer>
+        <p>&copy; 2025 Country Data List. All rights reserved.</p>
+    </footer>
+    
+    <!-- UMD version of the library - works in all browsers -->
+    <script src="../dist/country-data-list.min.js"></script>
+    
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("Page is fully loaded");
+            
+            // Make sure CountryDataList is available
+            if (window.CountryDataList) {
+                console.log("Library loaded successfully");
+            } else {
+                console.error("Library failed to load correctly!");
+            }
+            
+            // Add event listener to the button
+            document.getElementById('cButton').addEventListener('click', () => {
+                const currencyCode = document.getElementById("currency").value.trim();
+                
+                // Use the library to get currency symbol
+                if (window.CountryDataList && window.CountryDataList.getSymbolFromCurrency) {
+                    const symbol = window.CountryDataList.getSymbolFromCurrency(currencyCode);
+                    document.getElementById('output').textContent = symbol || 'Symbol not found';
+                    
+                    // Show additional info in console for debugging
+                    console.log(`Currency: ${currencyCode}, Symbol: ${symbol}`);
+                } else {
+                    document.getElementById('output').textContent = 'Library not loaded correctly';
+                    console.error("CountryDataList or getSymbolFromCurrency function not found");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

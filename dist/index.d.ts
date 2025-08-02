@@ -1,5 +1,5 @@
-import continents from './data/continents';
-import * as regions from './data/regions';
+import continents from './data/continents.js';
+import * as regions from './data/regions.js';
 export namespace countries {
     export { countriesAll as all };
 }
@@ -20,14 +20,14 @@ export namespace callingCountries {
 export namespace callingCodes {
     export { callingCodesAll as all };
 }
-import { currencySymbolMap } from './data/currency-symbol';
-import { getSymbolFromCurrency } from './data/currency-symbol';
-import { getNameFromCurrency } from './data/currency-symbol';
-import { getSafeSymbolFromCurrency } from './data/currency-symbol';
-import { getSafeNameFromCurrency } from './data/currency-symbol';
-import countriesAll from './data/countries';
-import currenciesAll from './data/currencies';
-import languagesAll from './data/languages';
+import { currencySymbolMap } from './data/currency-symbol.js';
+import { getSymbolFromCurrency } from './data/currency-symbol.js';
+import { getNameFromCurrency } from './data/currency-symbol.js';
+import { getSafeSymbolFromCurrency } from './data/currency-symbol.js';
+import { getSafeNameFromCurrency } from './data/currency-symbol.js';
+import countriesAll from './data/countries.js';
+import currenciesAll from './data/currencies.js';
+import languagesAll from './data/languages.js';
 declare const callingCodesAll: any[];
 export { continents, regions, currencySymbolMap, getSymbolFromCurrency, getNameFromCurrency, getSafeSymbolFromCurrency, getSafeNameFromCurrency };
 //# sourceMappingURL=index.d.ts.map

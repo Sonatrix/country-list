@@ -1,12 +1,41 @@
 {
     "name": "country-data-list",
-    "version": "1.4.1",
+    "version": "1.5.0",
     "description": "Data about countries - like their ISO codes and currencies",
     "homepage": "https://github.com/Sonatrix/country-list",
     "bugs": {
         "url": "https://github.com/Sonatrix/country-list/issues"
     },
+    "type": "module",
     "main": "dist/index.js",
+    "module": "dist/index.js",
+    "browser": "dist/country-data-list.min.js",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "require": "./dist/country-data-list.umd.js",
+            "types": "./dist/index.d.ts"
+        },
+        "./esm": "./dist/country-data-list.esm.js",
+        "./umd": "./dist/country-data-list.umd.js",
+        "./data/countries": {
+            "import": "./dist/data/countries.module.js",
+            "types": "./dist/data/countries.d.ts"
+        },
+        "./data/currencies": {
+            "import": "./dist/data/currencies.module.js",
+            "types": "./dist/data/currencies.d.ts"
+        },
+        "./data/languages": {
+            "import": "./dist/data/languages.module.js",
+            "types": "./dist/data/languages.d.ts"
+        },
+        "./data/currency-symbol": {
+            "import": "./dist/data/currency-symbol.module.js",
+            "types": "./dist/data/currency-symbol.d.ts"
+        }
+    },
+    "sideEffects": false,
     "lint-staged": {
         "*.js": [
             "eslint --fix",
@@ -19,11 +48,16 @@
         }
     },
     "scripts": {
-        "build": "rm -r dist/* && npx tsc && babel src -d dist",
-        "pack": "npx webpack --mode production",
+        "build": "rm -rf dist && tsc && npm run copy-data && npm run build-modules && npm run pack",
+        "copy-data": "cp -r src/data/*.js dist/data/",
+        "build-modules": "cp -r src/data/*.module.js dist/data/",
+        "pack": "rollup -c",
+        "analyze": "rollup -c --environment ANALYZE:true",
+        "tree-shaking-test": "rollup examples/tree-shaking.js -f esm -o dist/tree-shaking-example.js",
         "test": "mocha",
         "lint": "eslint src",
-        "prepare": "npm run lint --fix && npm run test && npm run build",
+        "lint:fix": "eslint src --fix",
+        "prepare": "npm run lint:fix && npm run test && npm run build",
         "prettify": "prettier --config .prettierrc --write '*/**/*.js'"
     },
     "repository": {
@@ -35,7 +69,8 @@
         "country",
         "es6",
         "es2015",
-        "babel",
+        "esm",
+        "typescript",
         "mocha",
         "chai",
         "eslint",
@@ -45,25 +80,16 @@
     "author": "Sonatrix",
     "license": "MIT",
     "devDependencies": {
-        "@babel/cli": "^7.24.8",
-        "@babel/core": "^7.25.2",
-        "@babel/preset-env": "^7.25.3",
-        "@babel/register": "^7.24.6",
-        "babel-eslint": "^10.1.0",
-        "babel-loader": "^9.2.1",
-        "chai": "4.3.7",
-        "eslint": "^9.18.0",
-        "eslint-config-prettier": "^9.1.0",
-        "eslint-plugin-prettier": "^5.2.1",
-        "husky": "^9.1.4",
-        "lint-staged": "^15.2.9",
-        "lodash": ">=4.17.21",
-        "mixin-deep": ">=2.0.1",
-        "mocha": "^10.2.0",
-        "prettier": "^3.4.2",
-        "set-value": ">=4.1.0",
-        "typescript": "^5.5.4",
-        "webpack": "^5.97.1",
-        "webpack-cli": "^6.0.1"
+        "chai": "^5.2.1",
+        "eslint": "^9.32.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-prettier": "^5.5.3",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.1.2",
+        "mocha": "^11.7.1",
+        "prettier": "^3.6.2",
+        "rollup": "^4.46.2",
+        "@rollup/plugin-terser": "^0.4.4",
+        "typescript": "^5.9.2"
     }
 }

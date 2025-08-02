@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 
-import { currencies } from '../src/index';
+import { currencies } from '../src/index.js';
 
 describe('currencies', () => {
   describe('all', () => {

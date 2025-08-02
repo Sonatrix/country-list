@@ -1,201 +1,211 @@
-# Country List
+# Country Data List
 
+A comprehensive library providing access to standardized country, currency, and language information.
 
-There are lots of little bits of data that you often need relating to countries,
-and I couldn't find any easy to use source of it. So I compiled it all here.
+[![npm version](https://badge.fury.io/js/country-data-list.svg)](https://badge.fury.io/js/country-data-list)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Work in Progress
+## Features
 
-feel free to use it, but be sure to check between upgrades.
+- **Comprehensive Data**: Access to country names, ISO codes, currencies, languages, and more
+- **Multiple Formats**: ES modules and UMD formats supported for browser and Node.js
+- **Type Definitions**: Full TypeScript support with type definitions
+- **Tree-Shaking Support**: Import only what you need to keep bundle size small
+- **Zero Dependencies**: Lightweight and self-contained
 
-I suspect that many of the `currencies` entries on the countries may be wrong. Help checking them would be appreciated.
+## Installation
 
+```bash
+npm install country-data-list
+# or
+yarn add country-data-list
+```
 
-## Countries
+## Usage
 
-The data currently provided for each country is:
+### ES Modules (Recommended)
 
-  * `name` The english name for the country 
-  * `alpha2` The [ISO 3166-1 alpha 2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code
-  * `alpha3` The [ISO 3166-1 alpha 3](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) code
-  * `status`: The ISO status of the entry - see below.
-  * `currencies` An array of [ISO 4217 currency codes](http://en.wikipedia.org/wiki/ISO_4217) with the primary one first
-  * `languages` An array of [ISO 639-2](http://en.wikipedia.org/wiki/ISO_639-2) codes for languages (may not be complete).
-  * `countryCallingCodes` An array of the international call prefixes for this country.
-  * `ioc` The [International Olympic Committee country code](http://en.wikipedia.org/wiki/List_of_IOC_country_codes)
-  * `emoji` The emoji of country's flag.
-  * `subunits` Geographically disjoint components like Alaska in the USA, administratively distinct regions such as the countries of Great Britain, or overseas islands for many European nations.
-  
-### Status notes
+```javascript
+import { countries, currencies, languages, lookup } from 'country-data-list';
 
-The `status` can be one of 'assigned', 'reserved', 'user assigned' or 'deleted'.
+// Get all countries
+console.log(countries.all);
 
-Assigned means that the code is properly in the ISO 3166 standard. Reserved means that the code is being prevented from being used. Deleted means that it has been deleted. User Assigned means that for some use cases it is required. Deleted means that it used to be in the standard but is now not.
+// Get a specific country by alpha2 code
+console.log(countries['US']);
 
-See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for full details, especially the "User-assigned code elements" and "Reserved code elements" sections.
+// Get a specific currency
+console.log(currencies['USD']);
 
-## Regions
+// Search for countries
+const results = lookup.countries('united');
+console.log(results);
+```
 
-Countries are ofter grouped into regions. The list of regions is by no means exhaustive, pull requests very welcome for additions.
-
-  * `countries` An array of `alpha2` codes for the countries in this region.
-
-## Currencies
-
-It is not that useful to just have the currency code(s) for a country, so included is currency data too:
-
-  * `name` The english name for the currency
-  * `code` The [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) code
-  * `number` The [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) number
-  * `decimals` The number of decimal digits conventionally shown
-  * `symbol` The currency symbol for the currency (e.g. ¥, $ etc.). Some symbols are not available, in which case
-    `symbol` contains the ISO 4217 code.  Credit to [bengourley/currency-symbol-map](https://github.com/bengourley/currency-symbol-map)
-    for the symbol database.
-
-## Languages
-
-A list of languages provided by [ISO 639-2](http://en.wikipedia.org/wiki/ISO_639-2);
-
-  * `name` The english name for the language
-  * `alpha2` The two letter [ISO 639-1](http://en.wikipedia.org/wiki/ISO_639-1) code for the language (may be blank).
-  * `alpha3` The three letter terminological [ISO 639-2](http://en.wikipedia.org/wiki/ISO_639-2) code for the language (may be blank).
-  * `bibliograpic` The three letter bibliographic [ISO 639-2](http://en.wikipedia.org/wiki/ISO_639-2) code for the language (may be blank).
-
-## Lookup
-
-To make finding easier there are utility methods that can search the countries and currencies. See examples below.
-
-### In the browser
-
-Include the dist via the script tag
+### Browser Usage
 
 ```html
-<script src='dist/country-data-list.min.js' />
-<script>
-  window.CountryDataList.getSymbolFromCurrency('USD') //=> '$'
+<script type="module">
+  import { countries, currencies, languages } from 'https://cdn.jsdelivr.net/npm/country-data-list/dist/country-data-list.esm.js';
+  
+  // Use the library
+  console.log(countries.all.length);
 </script>
 ```
 
+### CommonJS (Legacy)
 
-## Installing
+```javascript
+const { countries, currencies, languages } = require('country-data-list');
 
-``` bash
-npm install country-data-list
-```
-
-
-## Example usage
-* es5
-``` javascript
-var countries        = require('country-data-list').countries,
-    currencies       = require('country-data-list').currencies,
-    regions          = require('country-data-list').regions,
-    languages        = require('country-data-list').languages,
-    callingCountries = require('country-data-list').callingCountries;
-
-// .all gives you an array of all entries
-console.log( countries.all );
-console.log( currencies.all );
-
-// countries are found using alpha2 or alpha3 (both uppercase)
-console.log( countries.BE.name );        // 'Belgium'
-console.log( countries.FRA.currencies ); // ['EUR']
-
-// callingCountries is like countries but only has entries with dialing codes.
-
-// currencies are accessed by their code (uppercase)
-console.log( currencies.USD.name ); // 'United States dollar'
-
-// regions are accessed using a camel case name
-console.log( regions.europe.countries )
-```
-
-``` javascript
-var lookup = require('country-data-list').lookup;
-
-// Match a value (grab first from array) case insensitive
-var france = lookup.countries({name: 'France'})[0];
- 
-// Or match one of several possible values.
-var eurozone_countries = lookup.countries({currencies: 'EUR'});
-```
-
-* es6
-```
-import {countries} from 'country-data-list';
-
+// Get all countries
 console.log(countries.all);
-
-// You can also use
-import {lookup} from 'country-data-list';
-
-// Match a value (grab first from array) case insensitive
-const france = lookup.countries({name: 'France'})[0];
 ```
 
-It is very simple for now - feel free to contribute more helpful accessors.
+### Tree-Shaking (Optimized Bundle Size)
 
+Tree-shaking allows you to import only the specific parts you need, resulting in smaller bundle sizes. The library offers multiple ways to optimize your imports:
 
-## Possible future additions
+#### Method 1: Selective Named Imports
 
-More data for each country is most welcome. Obvious things that it might be nice
-to add are:
+```javascript
+// Import only the parts you need
+import { countries } from 'country-data-list';
+import { currencies } from 'country-data-list';
+import { languages } from 'country-data-list';
+
+// Or import specific utility functions
+import { getSymbolFromCurrency } from 'country-data-list';
+```
+
+#### Method 2: Direct Data Module Imports
+
+For even smaller bundles, import the data modules directly:
+
+```javascript
+// Most efficient imports for minimal bundle size
+import countries from 'country-data-list/data/countries';
+import currencies from 'country-data-list/data/currencies';
+import languages from 'country-data-list/data/languages';
+import { getSymbolFromCurrency } from 'country-data-list/data/currency-symbol';
+```
+
+#### Method 3: Individual Currency Symbol Functions
+
+For applications that only need currency symbols, you can import just the functions you need:
+
+```javascript
+// Import only the currency symbol function (smallest bundle size)
+import { getSymbolFromCurrency } from 'country-data-list/data/currency-symbol';
+
+// Or import specific functions as needed
+import { 
+  getSymbolFromCurrency, 
+  getNameFromCurrency 
+} from 'country-data-list/data/currency-symbol';
+
+// Usage
+console.log(getSymbolFromCurrency('USD')); // $
+console.log(getNameFromCurrency('USD')); // US Dollar
+```
+
+#### Bundle Size Comparison
+
+| Import Method | Approximate Bundle Size | Data Included |
+|---------------|------------------------|---------------|
+| `import * from 'country-data-list'` | ~500KB | All data and functions |
+| `import { countries } from 'country-data-list'` | ~200KB | Just countries data |
+| `import countries from 'country-data-list/data/countries'` | ~150KB | Only countries data module |
+| `import { getSymbolFromCurrency } from 'country-data-list'` | ~50KB | Just symbol function and map |
+| `import { getSymbolFromCurrency } from 'country-data-list/data/currency-symbol'` | ~15KB | Only the specific function |
+
+The library is designed to be fully tree-shakeable in bundlers that support ES modules like Webpack, Rollup, and esbuild.
+
+#### Verifying Tree-Shaking
+
+You can verify that tree-shaking works by running our test script:
+
+```bash
+# Run the tree-shaking test
+npm run tree-shaking-test
+
+# Compare the output file size with the full bundle
+ls -la dist/tree-shaking-example.js dist/country-data-list.esm.js
+```
+
+To analyze your own project's tree-shaking:
+
+```bash
+# Using Rollup with visualizer
+npx rollup your-file.js -f esm -o bundle.js -p rollup-plugin-visualizer
+
+# Using webpack-bundle-analyzer with webpack
+```
+
+For more examples, check out the `examples/tree-shaking.js` file in the repository.
+
+## Available Data
 
 ### Countries
 
-  * Wikipedia links
-  * Coordinates (centroid, bounding box, etc)
+The data provided for each country includes:
+
+- `name`: The English name for the country
+- `alpha2`: The [ISO 3166-1 alpha 2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code
+- `alpha3`: The [ISO 3166-1 alpha 3](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) code
+- `status`: The ISO status of the entry
+- `currencies`: An array of [ISO 4217 currency codes](http://en.wikipedia.org/wiki/ISO_4217)
+- `languages`: An array of [ISO 639-2](http://en.wikipedia.org/wiki/ISO_639-2) language codes
+- `countryCallingCodes`: International call prefixes
+- `ioc`: The [International Olympic Committee country code](http://en.wikipedia.org/wiki/List_of_IOC_country_codes)
+- `emoji`: The country's flag emoji
 
 ### Currencies
-# Added Currency Symbol Maps
-* removed External Dependency for currency-symbol-map. Now we have 4 methods
-*  currencySymbolMap => returns list of currency with name, number, symbol
-*  getSymbolFromCurrency,
-*  getNameFromCurrency,
-*  getSafeSymbolFromCurrency,
-*  getSafeNameFromCurrency
 
-## Other similar bits of code
+Information about currencies includes:
 
-* [libphonenumber](https://code.google.com/p/libphonenumber/) "Google's common Java, C++ and Javascript library for parsing, formatting, storing and validating international phone numbers."
+- `code`: The [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) currency code
+- `name`: The currency name
+- `number`: The ISO 4217 currency number
+- `decimals`: The number of decimal digits typically used with this currency
+- `symbol`: The currency symbol (where available)
 
+### Languages
 
-## How to contribute
+Language information includes:
 
-You can change on JSON.
+- `name`: The language name in English
+- `alpha2`: The [ISO 639-1](http://en.wikipedia.org/wiki/ISO_639-1) code (2 character) where available
+- `alpha3`: The [ISO 639-2/T](http://en.wikipedia.org/wiki/ISO_639-2) code (3 character) terminology
+- `bibliographic`: The [ISO 639-2/B](http://en.wikipedia.org/wiki/ISO_639-2) bibliographic code
 
-These are the steps required:
+### Lookup
 
-``` bash
-# Clone the repo (or better your fork of it)
-git clone https://github.com/Sonatrix/country-list.git
-cd country-list
+The library includes a simple lookup tool for finding entries:
 
-# install the dependencies
-npm install .
+```javascript
+import { lookup } from 'country-data-list';
 
-# Edit the countries.js
-open data/countries.js
+// Search for countries
+const countryResults = lookup.countries('united');
 
+// Search for currencies
+const currencyResults = lookup.currencies('dollar');
 
-# Run the tests
-mocha
-
-# If all is ok commit and push
-git add .
-git commit
-git push
-
-# Then send a pull request with your changes. Ideally use several small commits,
-# and reference a source that backs up the change.
+// Search for languages
+const languageResults = lookup.languages('span');
 ```
 
+## Contribute
 
-## Sources
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-The currency data was copied from the [Wikipedia ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) page.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-The country calling codes came from the  [Wikipedia country calling codes](http://en.wikipedia.org/wiki/List_of_country_calling_codes) page.
+## License
 
-
-## Added typescript definations
+This project is licensed under the MIT License - see the LICENSE file for details.
