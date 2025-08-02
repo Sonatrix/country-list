@@ -33,6 +33,10 @@
         "./data/currency-symbol": {
             "import": "./dist/data/currency-symbol.module.js",
             "types": "./dist/data/currency-symbol.d.ts"
+        },
+        "./data/timezones": {
+            "import": "./dist/data/timezones.module.js",
+            "types": "./dist/data/timezones.d.ts"
         }
     },
     "sideEffects": false,

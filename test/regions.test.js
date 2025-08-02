@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { expect } from 'chai';
 
 import { countries, regions } from '../src/index.js';
 
@@ -8,7 +8,7 @@ describe('regions', () => {
       describe(key.toString(), () => {
         regions[key].countries.forEach((country) => {
           it(country, () => {
-            assert(countries[country]);
+            expect(countries[country]).to.exist;
           });
         });
       });
@@ -35,7 +35,7 @@ describe('regions', () => {
     });
 
     it('are not duplicated', () => {
-      assert(duplicate.length === 0);
+      expect(duplicate.length).to.equal(0);
     });
   });
 
@@ -59,7 +59,7 @@ describe('regions', () => {
     );
 
     it('are all used', () => {
-      assert(difference.length === 0);
+      expect(difference.length).to.equal(0);
     });
   });
 });

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Timezones Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    select, input, button {
+      padding: 8px;
+      margin: 5px 0;
+    }
+    .result {
+      background: #f4f4f4;
+      padding: 15px;
+      border-radius: 4px;
+      margin-top: 15px;
+    }
+    .time-display {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .timezone-list {
+      height: 200px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Country Timezones Demo</h1>
+  
+  <div class="section">
+    <h2>Select a Country</h2>
+    <select id="countrySelect">
+      <option value="">-- Select a country --</option>
+    </select>
+    <div class="result">
+      <h3>Timezones for Selected Country</h3>
+      <div id="countryTimezones" class="timezone-list"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Select a Timezone</h2>
+    <input type="text" id="timezoneFilter" placeholder="Filter timezones...">
+    <select id="timezoneSelect" size="10" style="width: 100%">
+      <option value="">-- Loading timezones --</option>
+    </select>
+    <div class="result">
+      <h3>Current Time</h3>
+      <div id="currentTime" class="time-display">Select a timezone</div>
+      
+      <h3>Countries Using This Timezone</h3>
+      <div id="timezoneCountries"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { countries, timezones } from '../dist/country-data-list.esm.js';
+
+    // Populate country dropdown
+    const countrySelect = document.getElementById('countrySelect');
+    const sortedCountries = [...countries.all].sort((a, b) => a.name.localeCompare(b.name));
+    
+    sortedCountries.forEach(country => {
+      const option = document.createElement('option');
+      option.value = country.alpha2;
+      option.textContent = `${country.name} (${country.alpha2})`;
+      countrySelect.appendChild(option);
+    });
+
+    // Populate timezone dropdown
+    const timezoneSelect = document.getElementById('timezoneSelect');
+    const timezoneFilter = document.getElementById('timezoneFilter');
+    
+    function populateTimezones(filter = '') {
+      timezoneSelect.innerHTML = '';
+      const filteredTimezones = timezones.all.filter(tz => 
+        !filter || tz.toLowerCase().includes(filter.toLowerCase())
+      );
+      
+      filteredTimezones.forEach(timezone => {
+        const option = document.createElement('option');
+        option.value = timezone;
+        option.textContent = timezone;
+        timezoneSelect.appendChild(option);
+      });
+    }
+    
+    populateTimezones();
+    
+    // Update displayed time for the selected timezone
+    function updateTime(timezone) {
+      const currentTime = document.getElementById('currentTime');
+      if (!timezone) {
+        currentTime.textContent = 'Select a timezone';
+        return;
+      }
+      
+      try {
+        const formatter = new Intl.DateTimeFormat('en-US', {
+          timeZone: timezone,
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          timeZoneName: 'long'
+        });
+        
+        const updateDisplay = () => {
+          currentTime.textContent = formatter.format(new Date());
+        };
+        
+        // Update immediately and then every second
+        updateDisplay();
+        return setInterval(updateDisplay, 1000);
+      } catch (e) {
+        currentTime.textContent = `Error: ${e.message}`;
+        return null;
+      }
+    }
+    
+    // Handle country selection
+    let timeInterval;
+    
+    countrySelect.addEventListener('change', () => {
+      const countryCode = countrySelect.value;
+      const countryTimezones = document.getElementById('countryTimezones');
+      
+      if (!countryCode) {
+        countryTimezones.innerHTML = 'Please select a country';
+        return;
+      }
+      
+      const tzs = timezones.getTimezonesByCountry(countryCode);
+      
+      if (!tzs || tzs.length === 0) {
+        countryTimezones.innerHTML = 'No timezone data available for this country';
+        return;
+      }
+      
+      countryTimezones.innerHTML = tzs.map(tz => {
+        const offset = timezones.getUtcOffset(tz) || '';
+        return `<div><strong>${tz}</strong> (UTC${offset})</div>`;
+      }).join('');
+      
+      // If only one timezone, select it in the dropdown
+      if (tzs.length === 1) {
+        timezoneSelect.value = tzs[0];
+        timezoneSelect.dispatchEvent(new Event('change'));
+      }
+    });
+    
+    // Handle timezone selection
+    timezoneSelect.addEventListener('change', () => {
+      const timezone = timezoneSelect.value;
+      const timezoneCountries = document.getElementById('timezoneCountries');
+      
+      if (!timezone) {
+        timezoneCountries.innerHTML = 'Please select a timezone';
+        if (timeInterval) clearInterval(timeInterval);
+        return;
+      }
+      
+      // Update the time display
+      if (timeInterval) clearInterval(timeInterval);
+      timeInterval = updateTime(timezone);
+      
+      // Show countries using this timezone
+      const countryCodes = timezones.getCountriesForTimezone(timezone);
+      
+      if (countryCodes.length === 0) {
+        timezoneCountries.innerHTML = 'No countries found using this timezone';
+        return;
+      }
+      
+      const countryNames = countryCodes.map(code => {
+        const country = countries.all.find(c => c.alpha2 === code);
+        return country ? country.name : code;
+      }).sort();
+      
+      timezoneCountries.innerHTML = countryNames.map(name => 
+        `<div>${name}</div>`
+      ).join('');
+    });
+    
+    // Handle timezone filtering
+    timezoneFilter.addEventListener('input', () => {
+      populateTimezones(timezoneFilter.value);
+    });
+  </script>
+</body>
+</html>

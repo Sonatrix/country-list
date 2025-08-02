@@ -1,11 +1,11 @@
-import { assert } from 'chai';
+import { expect, assert } from 'chai';
 
 import { currencies } from '../src/index.js';
 
 describe('currencies', () => {
   describe('all', () => {
     it('should be array', () => {
-      assert(Array.isArray(currencies.all));
+      expect(currencies.all).to.be.an('array');
     });
   });
 
@@ -17,7 +17,7 @@ describe('currencies', () => {
 
   describe('formatting', () => {
     it('decimals should be numbers', () => {
-      assert(!Number.isNaN(currencies.USD.decimals));
+      expect(Number.isNaN(currencies.USD.decimals)).to.be.false;
     });
   });
 

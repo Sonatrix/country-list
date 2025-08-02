@@ -1,5 +1,13 @@
 # Country List - Latest Updates (August 2025)
 
+## New Features
+* Added timezone data for all countries with IANA timezone identifiers
+* New timezone API with methods for:
+  * Getting all timezones for a country
+  * Finding countries that use a specific timezone
+  * Getting UTC offsets for timezones
+* Full TypeScript support for timezone data
+
 ## Modern Module Structure
 * Improved tree-shaking support for better bundle size optimization
 * Direct JSON imports with proper type assertions for better type safety

@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { expect } from 'chai';
 
 import * as countryData from '../src/index.js';
 
@@ -13,11 +13,11 @@ describe('calling codes', () => {
     countries.forEach(({ name, countryCallingCodes }) => {
       if (countryCallingCodes && countryCallingCodes.length) {
         it(`should contain codes for ${name}`, () => {
-          assert(
+          expect(
             countryCallingCodes.every(
               (code) => callingCodes.all.indexOf(code) > -1
             )
-          );
+          ).to.be.true;
         });
       }
     });
@@ -25,12 +25,12 @@ describe('calling codes', () => {
 
   describe('callingCountries', () => {
     it('should contain countries with calling codes', () => {
-      assert(callingCountries.BE);
+      expect(callingCountries.BE).to.exist;
     });
 
     it('should not contain countries without calling codes', () => {
-      assert(!callingCountries.CP, 'Clipperton Island');
-      assert(!callingCountries[''], 'empty string');
+      expect(callingCountries.CP).to.not.exist; // Clipperton Island
+      expect(callingCountries['']).to.not.exist; // empty string
     });
   });
 });

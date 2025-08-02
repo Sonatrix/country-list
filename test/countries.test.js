@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { expect, assert } from 'chai';
 
 import * as countryData from '../src/index.js';
 
@@ -7,7 +7,7 @@ const { countries: countriesAll, currencies, languages } = countryData;
 describe('countries', () => {
   describe('all', () => {
     it('should be array', () => {
-      assert(Array.isArray(countriesAll.all));
+      expect(countriesAll.all).to.be.an('array');
     });
   });
 

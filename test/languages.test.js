@@ -1,11 +1,11 @@
-import { assert } from 'chai';
+import { expect, assert } from 'chai';
 
 import { languages } from '../src/index.js';
 
 describe('languages', () => {
   describe('all', () => {
     it('should be array', () => {
-      assert(Array.isArray(languages.all));
+      expect(languages.all).to.be.an('array');
     });
   });
 

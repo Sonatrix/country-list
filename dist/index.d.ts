@@ -9,6 +9,7 @@ export namespace currencies {
 export namespace languages {
     export { languagesAll as all };
 }
+import { timezones } from './data/timezones.module.js';
 export const lookup: {
     countries: any;
     currencies: any;
@@ -29,5 +30,5 @@ import countriesAll from './data/countries.js';
 import currenciesAll from './data/currencies.js';
 import languagesAll from './data/languages.js';
 declare const callingCodesAll: any[];
-export { continents, regions, currencySymbolMap, getSymbolFromCurrency, getNameFromCurrency, getSafeSymbolFromCurrency, getSafeNameFromCurrency };
+export { continents, regions, timezones, currencySymbolMap, getSymbolFromCurrency, getNameFromCurrency, getSafeSymbolFromCurrency, getSafeNameFromCurrency };
 //# sourceMappingURL=index.d.ts.map

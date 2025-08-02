@@ -18,6 +18,7 @@ import * as regions from './data/regions.js';
 import countriesAll from './data/countries.js';
 import currenciesAll from './data/currencies.js';
 import languagesAll from './data/languages.js';
+import { timezones } from './data/timezones.module.js';
 import lookupFn from './lookup.js';
 
 const countries = {
@@ -130,6 +131,7 @@ export {
   countries,
   currencies,
   languages,
+  timezones,
   lookup,
   callingCountries,
   callingCodes,
