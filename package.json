@@ -22,6 +22,10 @@
             "import": "./dist/data/countries.module.js",
             "types": "./dist/data/countries.d.ts"
         },
+        "./data/continents": {
+            "import": "./dist/data/continents.module.js",
+            "types": "./dist/data/continents.d.ts"
+        },
         "./data/currencies": {
             "import": "./dist/data/currencies.module.js",
             "types": "./dist/data/currencies.d.ts"
@@ -29,6 +33,10 @@
         "./data/languages": {
             "import": "./dist/data/languages.module.js",
             "types": "./dist/data/languages.d.ts"
+        },
+        "./data/regions": {
+            "import": "./dist/data/regions.module.js",
+            "types": "./dist/data/regions.d.ts"
         },
         "./data/currency-symbol": {
             "import": "./dist/data/currency-symbol.module.js",
