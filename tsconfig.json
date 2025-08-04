@@ -7,9 +7,8 @@
       // Generate d.ts files
       "declaration": true,
       "target": "ES2020",
-      // This compiler run should
-      // only output d.ts files
-      "emitDeclarationOnly": true,
+      // Emit both JS and d.ts files
+      "emitDeclarationOnly": false,
       // Types should go into this directory.
       // Removing this would place the .d.ts files
       // next to the .js files
