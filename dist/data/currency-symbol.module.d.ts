@@ -1,14 +1,4 @@
-/**
- * Module for currency symbols and utility functions
- * This file can be imported directly to benefit from tree-shaking
- * @module currency-symbol
- */
-export const currencySymbolMap: {
-    symbol: string;
-    name: string;
-    code: string;
-    number: string;
-}[];
+import { currencySymbolMap } from './currency-symbol.js';
 /**
  * Retrieves the currency symbol for a given currency code
  * @param {string} currencyCode - The ISO currency code (e.g., 'USD')
@@ -33,4 +23,5 @@ export function getSafeSymbolFromCurrency(currencyCode: string): string;
  * @returns {string} The currency name or the code if not found
  */
 export function getSafeNameFromCurrency(currencyCode: string): string;
+export { currencySymbolMap };
 //# sourceMappingURL=currency-symbol.module.d.ts.map

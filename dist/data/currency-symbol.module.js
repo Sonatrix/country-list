@@ -4,25 +4,8 @@
  * @module currency-symbol
  */
 
-// Currency symbol mapping
-const currencySymbolMap = [
-  { symbol: 'د.إ', name: 'UAE Dirham', code: 'AED', number: '784' },
-  { symbol: '؋', name: 'Afghani', code: 'AFN', number: '971' },
-  { symbol: 'L', name: 'Lek', code: 'ALL', number: '008' },
-  { symbol: '֏', name: 'Armenian Dram', code: 'AMD', number: '051' },
-  {
-    symbol: 'ƒ',
-    name: 'Netherlands Antillean Guilder',
-    code: 'ANG',
-    number: '532',
-  },
-  { symbol: 'Kz', name: 'Kwanza', code: 'AOA', number: '973' },
-  { symbol: '$', name: 'Argentine Peso', code: 'ARS', number: '032' },
-  { symbol: '$', name: 'Australian Dollar', code: 'AUD', number: '036' },
-  { symbol: 'ƒ', name: 'Aruban Florin', code: 'AWG', number: '533' },
-  { symbol: '₼', name: 'Azerbaijan Manat', code: 'AZN', number: '944' },
-  // Full map will be copied during build
-];
+// Import the complete currency symbol mapping
+import { currencySymbolMap } from './currency-symbol.js';
 
 /**
  * Retrieves the currency symbol for a given currency code
