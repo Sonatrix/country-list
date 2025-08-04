@@ -59,7 +59,7 @@ export const regions = {
 
 // Get all countries from all regions
 export const allRegionCountries = Object.values(regionsData)
-  .flatMap(region => region.countries)
+  .flatMap((region) => region.countries)
   .filter((country, index, self) => self.indexOf(country) === index)
   .sort();
 
@@ -70,14 +70,14 @@ export const allRegionCountries = Object.values(regionsData)
  */
 export function getRegionsForCountry(countryCode) {
   if (!countryCode) return [];
-  
+
   const regions = [];
-  Object.entries(regionsData).forEach(([regionKey, regionData]) => {
+  Object.entries(regionsData).forEach(([, regionData]) => {
     if (regionData.countries.includes(countryCode.toUpperCase())) {
       regions.push(regionData.name);
     }
   });
-  
+
   return regions;
 }
 
@@ -88,10 +88,10 @@ export function getRegionsForCountry(countryCode) {
  */
 export function getCountriesInRegion(regionName) {
   if (!regionName) return null;
-  
-  const region = Object.values(regionsData).find(r => 
-    r.name.toLowerCase() === regionName.toLowerCase()
+
+  const region = Object.values(regionsData).find(
+    (r) => r.name.toLowerCase() === regionName.toLowerCase()
   );
-  
+
   return region ? region.countries : null;
 }

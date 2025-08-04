@@ -11,7 +11,7 @@ export const {
   southAmerica,
   antarctica,
   europe,
-  oceania
+  oceania,
 } = continentsData;
 
 // Create a consolidated export for all continents
@@ -22,12 +22,12 @@ export const continents = {
   southAmerica,
   antarctica,
   europe,
-  oceania
+  oceania,
 };
 
 // Get all countries from all continents
 export const allContinentCountries = Object.values(continentsData)
-  .flatMap(continent => continent.countries)
+  .flatMap((continent) => continent.countries)
   .filter((country, index, self) => self.indexOf(country) === index)
   .sort();
 
@@ -38,11 +38,11 @@ export const allContinentCountries = Object.values(continentsData)
  */
 export function getContinentForCountry(countryCode) {
   if (!countryCode) return null;
-  
-  const continent = Object.values(continentsData).find(cont => 
+
+  const continent = Object.values(continentsData).find((cont) =>
     cont.countries.includes(countryCode.toUpperCase())
   );
-  
+
   return continent ? continent.name : null;
 }
 
@@ -53,10 +53,10 @@ export function getContinentForCountry(countryCode) {
  */
 export function getCountriesInContinent(continentName) {
   if (!continentName) return null;
-  
-  const continent = Object.values(continentsData).find(cont => 
-    cont.name.toLowerCase() === continentName.toLowerCase()
+
+  const continent = Object.values(continentsData).find(
+    (cont) => cont.name.toLowerCase() === continentName.toLowerCase()
   );
-  
+
   return continent ? continent.countries : null;
 }
