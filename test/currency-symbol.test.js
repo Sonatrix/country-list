@@ -12,7 +12,7 @@ describe('currency-symbol', () => {
     });
 
     it('should return E£ when GBP is provided', () => {
-      assert.equal(getSymbolFromCurrency('GBP'), 'E£');
+      assert.equal(getSymbolFromCurrency('GBP'), '£');
     });
 
     it('should return € when EUR is provided', () => {

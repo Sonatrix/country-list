@@ -85,7 +85,7 @@ const currencySymbolMap = [
   { symbol: '€', name: 'Euro', code: 'EUR', number: '978' },
   { symbol: '$', name: 'Fiji Dollar', code: 'FJD', number: '242' },
   { symbol: '£', name: 'Falkland Islands Pound', code: 'FKP', number: '238' },
-  { symbol: 'E£', name: 'Pound Sterling', code: 'GBP', number: '826' },
+  { symbol: '£', name: 'Pound Sterling', code: 'GBP', number: '826' },
   { symbol: '₾', name: 'Lari', code: 'GEL', number: '981' },
   { symbol: '£', name: '', code: 'GGP', number: '' },
   { symbol: '₵', name: '', code: 'GHC', number: '' },
