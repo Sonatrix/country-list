@@ -1,49 +1,60 @@
 {
     "name": "country-data-list",
-    "version": "1.5.4",
+    "version": "1.5.5",
     "description": "Data about countries - like their ISO codes and currencies",
     "homepage": "https://github.com/Sonatrix/country-list",
     "bugs": {
         "url": "https://github.com/Sonatrix/country-list/issues"
     },
     "type": "module",
-    "main": "dist/index.js",
+    "main": "dist/index.cjs",
     "module": "dist/index.js",
     "browser": "dist/country-data-list.min.js",
     "exports": {
         ".": {
             "import": "./dist/index.js",
-            "require": "./dist/country-data-list.umd.js",
+            "require": "./dist/index.cjs",
             "types": "./dist/index.d.ts"
         },
-        "./esm": "./dist/country-data-list.esm.js",
-        "./umd": "./dist/country-data-list.umd.js",
+        "./esm": {
+            "import": "./dist/country-data-list.esm.js"
+        },
+        "./umd": {
+            "require": "./dist/country-data-list.umd.js"
+        },
         "./data/countries": {
             "import": "./dist/data/countries.module.js",
+            "require": "./dist/data/countries.cjs",
             "types": "./dist/data/countries.d.ts"
         },
         "./data/continents": {
             "import": "./dist/data/continents.module.js",
+            "require": "./dist/data/continents.cjs",
             "types": "./dist/data/continents.d.ts"
         },
         "./data/currencies": {
             "import": "./dist/data/currencies.module.js",
+            "require": "./dist/data/currencies.cjs",
             "types": "./dist/data/currencies.d.ts"
         },
         "./data/languages": {
             "import": "./dist/data/languages.module.js",
+            "require": "./dist/data/languages.cjs",
             "types": "./dist/data/languages.d.ts"
         },
         "./data/regions": {
             "import": "./dist/data/regions.module.js",
+            "require": "./dist/data/regions.cjs",
             "types": "./dist/data/regions.d.ts"
         },
         "./data/currency-symbol": {
             "import": "./dist/data/currency-symbol.module.js",
+            "require": "./dist/data/currency-symbol.cjs",
             "types": "./dist/data/currency-symbol.d.ts"
         },
         "./data/timezones": {
             "import": "./dist/data/timezones.module.js",
+            "require": "./dist/data/timezones.cjs",
             "types": "./dist/data/timezones.d.ts"
         }
     },

@@ -278,21 +278,9 @@ The library includes a flexible lookup tool for finding entries with both string
 ```javascript
 import { lookup } from 'country-data-list';
 
-// String-based search (searches across name, alpha2, alpha3, code fields)
-const countryResults = lookup.countries('united');
-console.log(countryResults); // Finds United States, United Kingdom, etc.
-
 // Object-based search (exact property matching)
 const exactResults = lookup.countries({ name: 'United States' });
 console.log(exactResults); // Only exact name matches
-
-// Search for currencies
-const currencyResults = lookup.currencies('dollar');
-console.log(currencyResults); // Finds USD, CAD, AUD, etc.
-
-// Search for languages
-const languageResults = lookup.languages('span');
-console.log(languageResults); // Finds Spanish and related languages
 ```
 
 ## Contribute

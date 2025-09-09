@@ -16,6 +16,22 @@ export default [
       unknownGlobalSideEffects: false
     }
   },
+  // CJS build for Node/CommonJS environments
+  {
+    input: 'src/index.js',
+    output: {
+      file: 'dist/index.cjs',
+      format: 'cjs',
+      exports: 'named',
+      interop: 'auto'
+    },
+    plugins: [],
+    treeshake: {
+      moduleSideEffects: false,
+      propertyReadSideEffects: false,
+      unknownGlobalSideEffects: false
+    }
+  },
   // Minified ESM build
   {
     input: 'browser.js',
