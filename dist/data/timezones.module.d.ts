@@ -12,6 +12,19 @@ export function getTimezonesByCountry(countryCode: string): string[] | null;
 export function getCountriesForTimezone(timezone: string): string[];
 /**
  * Get current UTC offset for a timezone
+ * Europe/London (winter) → +00:00
+ * Europe/London (summer) → +01:00
+ *
+ * Asia/Kolkata → +05:30
+ *
+ * Invalid timezone → null
+ * Use timeZoneName: 'shortOffset' (supported in modern browsers and Node)
+ * @param {string} timezone - Timezone string (e.g. "Europe/London")
+ * @returns {string} - UTC offset in format "+HH:MM" or "-HH:MM"
+ */
+export function getUtcOffsetV2(timezone: string): string;
+/**
+ * Get current UTC offset for a timezone
  * @param {string} timezone - Timezone string (e.g. "Europe/London")
  * @returns {string} - UTC offset in format "+HH:MM" or "-HH:MM"
  */
@@ -24,6 +37,7 @@ export namespace timezones {
     export { getTimezonesByCountry };
     export { getCountriesForTimezone };
     export { getUtcOffset };
+    export { getUtcOffsetV2 };
 }
 import timezoneData from './timezones.js';
 //# sourceMappingURL=timezones.module.d.ts.map

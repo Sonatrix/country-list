@@ -56,9 +56,9 @@ describe('Timezones', () => {
         this.skip();
       }
       
-      const offset = timezones.getUtcOffset('Europe/London');
+      const offset = timezones.getUtcOffsetV2('Europe/London');
       expect(offset).to.be.a('string');
-      expect(offset).to.match(/^[+-]\d{1,2}(?::\d{2})?$/);
+      expect(offset).to.match(/^[+-]\d{2}:\d{2}$/);
     });
 
     it('should return null for invalid timezones', () => {

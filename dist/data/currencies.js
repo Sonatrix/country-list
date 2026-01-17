@@ -816,6 +816,12 @@ export default [
     number: '678',
   },
   {
+    code: 'STN',
+    decimals: 2,
+    name: 'São Tomé and Príncipe dobra',
+    number: '930',
+  },
+  {
     code: 'SYP',
     decimals: 2,
     name: 'Syrian pound',

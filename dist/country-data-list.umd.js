@@ -3415,7 +3415,7 @@
       alpha2: 'ST',
       alpha3: 'STP',
       countryCallingCodes: ['+239'],
-      currencies: ['STD'],
+      currencies: ['STN'],
       emoji: '🇸🇹',
       ioc: 'STP',
       languages: ['por'],
@@ -4773,6 +4773,12 @@
       decimals: 0,
       name: 'São Tomé and Príncipe dobra',
       number: '678',
+    },
+    {
+      code: 'STN',
+      decimals: 2,
+      name: 'São Tomé and Príncipe dobra',
+      number: '930',
     },
     {
       code: 'SYP',
@@ -8873,6 +8879,49 @@
 
   /**
    * Get current UTC offset for a timezone
+   * Europe/London (winter) → +00:00
+   * Europe/London (summer) → +01:00
+   *
+   * Asia/Kolkata → +05:30
+   *
+   * Invalid timezone → null
+   * Use timeZoneName: 'shortOffset' (supported in modern browsers and Node)
+   * @param {string} timezone - Timezone string (e.g. "Europe/London")
+   * @returns {string} - UTC offset in format "+HH:MM" or "-HH:MM"
+   */
+  function getUtcOffsetV2(timezone) {
+    if (!timezone) return null;
+
+    try {
+      const parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: timezone,
+        timeZoneName: 'shortOffset',
+      }).formatToParts(new Date());
+
+      const tzValue = parts.find((p) => p.type === 'timeZoneName')?.value;
+      if (!tzValue) return null;
+
+      // Case 1: Exact UTC
+      if (tzValue === 'GMT') {
+        return '+00:00';
+      }
+
+      // Case 2: GMT+H or GMT+HH or GMT+HH:MM
+      const match = tzValue.match(/^GMT([+-]\d{1,2})(?::(\d{2}))?$/);
+      if (!match) return null;
+
+      const sign = match[1][0];
+      const hours = match[1].slice(1).padStart(2, '0');
+      const minutes = match[2] ?? '00';
+
+      return `${sign}${hours}:${minutes}`;
+    } catch {
+      return null;
+    }
+  }
+
+  /**
+   * Get current UTC offset for a timezone
    * @param {string} timezone - Timezone string (e.g. "Europe/London")
    * @returns {string} - UTC offset in format "+HH:MM" or "-HH:MM"
    */
@@ -8900,6 +8949,7 @@
     getTimezonesByCountry,
     getCountriesForTimezone,
     getUtcOffset,
+    getUtcOffsetV2,
   };
 
   const search = (data, query) => {

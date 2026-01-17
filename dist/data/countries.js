@@ -2598,7 +2598,7 @@ export default [
     alpha2: 'ST',
     alpha3: 'STP',
     countryCallingCodes: ['+239'],
-    currencies: ['STD'],
+    currencies: ['STN'],
     emoji: '🇸🇹',
     ioc: 'STP',
     languages: ['por'],
