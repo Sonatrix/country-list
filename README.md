@@ -5,6 +5,8 @@ A comprehensive library providing access to standardized country, currency, and 
 [![npm version](https://badge.fury.io/js/country-data-list.svg)](https://badge.fury.io/js/country-data-list)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+This is a fork of https://github.com/OpenBookPrices/country-data.
+
 ## Features
 
 - **Comprehensive Data**: Access to country names, ISO codes, currencies, languages, timezones, and more
@@ -293,6 +295,15 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+## Acknowledgement
+
+This repository is a derived work of the following project, originally forked from:
+
+https://github.com/OpenBookPrices/country-data
+
+We would like to thank the original authors.
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
