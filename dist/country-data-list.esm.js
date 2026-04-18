@@ -1626,17 +1626,6 @@ var countriesAll = [
     status: 'assigned',
   },
   {
-    alpha2: 'EA',
-    alpha3: '',
-    countryCallingCodes: [],
-    currencies: ['EUR'],
-    emoji: '🇪🇦',
-    ioc: '',
-    languages: [],
-    name: 'Ceuta, Mulilla',
-    status: 'reserved',
-  },
-  {
     alpha2: 'EC',
     alpha3: 'ECU',
     countryCallingCodes: ['+593'],
@@ -3621,7 +3610,7 @@ var countriesAll = [
     emoji: '🇹🇷',
     ioc: 'TUR',
     languages: ['tur'],
-    name: 'Turkey',
+    name: 'Turkiye',
     status: 'assigned',
   },
   {
