@@ -2799,7 +2799,7 @@ export default [
     emoji: '🇹🇷',
     ioc: 'TUR',
     languages: ['tur'],
-    name: 'Turkey',
+    name: 'Turkiye',
     status: 'assigned',
   },
   {
