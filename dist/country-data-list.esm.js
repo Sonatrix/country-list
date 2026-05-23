@@ -3796,7 +3796,7 @@ var countriesAll = [
     emoji: '🇻🇳',
     ioc: 'VIE',
     languages: ['vie'],
-    name: 'VietNam',
+    name: 'Vietnam',
     status: 'assigned',
   },
   {
