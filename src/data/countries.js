@@ -356,7 +356,7 @@ export default [
     currencies: ['USD'],
     emoji: '🇧🇶',
     ioc: '',
-    languages: ['nld'],
+    languages: ['nld', 'eng', 'pap'],
     name: 'Bonaire, Sint Eustatius And Saba',
     status: 'assigned',
   },
