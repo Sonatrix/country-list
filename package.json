@@ -158,7 +158,7 @@
         "eslint-plugin-prettier": "^5.5.3",
         "husky": "^9.1.7",
         "lint-staged": "^16.1.2",
-        "mocha": "^11.0.0",
+        "mocha": "^12.0.3",
         "prettier": "^3.6.2",
         "rollup": "^4.60.1",
         "typescript": "^5.9.2"
