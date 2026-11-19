@@ -1,0 +1,9 @@
+import type { Currency } from '../index.js';
+
+declare const currencies: {
+  all: Currency[];
+  [code: string]: Currency | Currency[];
+};
+
+export default currencies;
+export const currenciesAll: Currency[];

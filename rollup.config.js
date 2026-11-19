@@ -96,5 +96,26 @@ export default [
       propertyReadSideEffects: false,
       unknownGlobalSideEffects: false
     }
-  }
+  },
+  ...[
+    'countries',
+    'continents',
+    'currencies',
+    'languages',
+    'regions',
+    'currency-symbol',
+    'timezones'
+  ].map((name) => ({
+    input: `dist/data/${name}.module.js`,
+    output: {
+      file: `dist/data/${name}.cjs`,
+      format: 'cjs',
+      exports: 'named'
+    },
+    treeshake: {
+      moduleSideEffects: false,
+      propertyReadSideEffects: false,
+      unknownGlobalSideEffects: false
+    }
+  }))
 ];

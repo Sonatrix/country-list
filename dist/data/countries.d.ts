@@ -1,23 +1,9 @@
-declare const _default: ({
-    alpha2: string;
-    alpha3: string;
-    countryCallingCodes: string[];
-    currencies: string[];
-    emoji: string;
-    ioc: string;
-    languages: string[];
-    name: string;
-    status: string;
-} | {
-    alpha2: string;
-    alpha3: string;
-    countryCallingCodes: string[];
-    currencies: any[];
-    ioc: string;
-    languages: any[];
-    name: string;
-    status: string;
-    emoji?: undefined;
-})[];
-export default _default;
-//# sourceMappingURL=countries.d.ts.map
+import type { Country } from '../index.js';
+
+declare const countries: {
+  all: Country[];
+  [code: string]: Country | Country[];
+};
+
+export default countries;
+export const countriesAll: Country[];

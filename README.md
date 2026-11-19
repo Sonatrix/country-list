@@ -56,6 +56,16 @@ const exactResults = lookup.countries({ name: 'United States' });
 console.log(exactResults);
 ```
 
+TypeScript consumers can import the public data types from the package:
+
+```typescript
+import { countries, currencies } from 'country-data-list';
+import type { Country, Currency } from 'country-data-list';
+
+const country: Country = countries.all[0];
+const currency: Currency = currencies.all[0];
+```
+
 ### Browser Usage
 
 ```html
@@ -306,4 +316,3 @@ We would like to thank the original authors.
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-

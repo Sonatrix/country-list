@@ -1,0 +1,32 @@
+import type { Region } from '../index.js';
+
+declare const regionData: Record<string, Region>;
+
+export default regionData;
+export const centralAsia: Region;
+export const southernAsia: Region;
+export const southeastAsia: Region;
+export const eastAsia: Region;
+export const westernAsia: Region;
+export const centralAfrica: Region;
+export const northAfrica: Region;
+export const southernAfrica: Region;
+export const eastAfrica: Region;
+export const westAfrica: Region;
+export const centralAmerica: Region;
+export const northernAmerica: Region;
+export const southAmerica: Region;
+export const caribbean: Region;
+export const antartica: Region;
+export const northernEurope: Region;
+export const southernEurope: Region;
+export const easternEurope: Region;
+export const westernEurope: Region;
+export const australia: Region;
+export const melanesia: Region;
+export const micronesia: Region;
+export const polynesia: Region;
+export const regions: Record<string, Region>;
+export const allRegionCountries: string[];
+export function getRegionsForCountry(countryCode: string): string[];
+export function getCountriesInRegion(regionName: string): string[] | null;

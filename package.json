@@ -1,6 +1,6 @@
 {
     "name": "country-data-list",
-    "version": "1.6.3",
+    "version": "1.7.0",
     "description": "Data about countries - like their ISO codes and currencies",
     "homepage": "https://github.com/Sonatrix/country-list",
     "bugs": {
@@ -10,52 +10,99 @@
     "main": "dist/index.cjs",
     "module": "dist/index.js",
     "browser": "dist/country-data-list.min.js",
+    "types": "dist/index.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/index.js",
-            "require": "./dist/index.cjs",
-            "types": "./dist/index.d.ts"
+            "import": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.js"
+            },
+            "require": {
+                "types": "./dist/index.d.cts",
+                "default": "./dist/index.cjs"
+            }
         },
         "./esm": {
-            "import": "./dist/country-data-list.esm.js"
+            "import": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/country-data-list.esm.js"
+            }
         },
         "./umd": {
-            "require": "./dist/country-data-list.umd.js"
+            "require": {
+                "types": "./dist/index.d.cts",
+                "default": "./dist/country-data-list.umd.js"
+            }
         },
         "./data/countries": {
-            "import": "./dist/data/countries.module.js",
-            "require": "./dist/data/countries.cjs",
-            "types": "./dist/data/countries.d.ts"
+            "import": {
+                "types": "./dist/data/countries.d.ts",
+                "default": "./dist/data/countries.module.js"
+            },
+            "require": {
+                "types": "./dist/data/countries.d.cts",
+                "default": "./dist/data/countries.cjs"
+            }
         },
         "./data/continents": {
-            "import": "./dist/data/continents.module.js",
-            "require": "./dist/data/continents.cjs",
-            "types": "./dist/data/continents.d.ts"
+            "import": {
+                "types": "./dist/data/continents.d.ts",
+                "default": "./dist/data/continents.module.js"
+            },
+            "require": {
+                "types": "./dist/data/continents.d.cts",
+                "default": "./dist/data/continents.cjs"
+            }
         },
         "./data/currencies": {
-            "import": "./dist/data/currencies.module.js",
-            "require": "./dist/data/currencies.cjs",
-            "types": "./dist/data/currencies.d.ts"
+            "import": {
+                "types": "./dist/data/currencies.d.ts",
+                "default": "./dist/data/currencies.module.js"
+            },
+            "require": {
+                "types": "./dist/data/currencies.d.cts",
+                "default": "./dist/data/currencies.cjs"
+            }
         },
         "./data/languages": {
-            "import": "./dist/data/languages.module.js",
-            "require": "./dist/data/languages.cjs",
-            "types": "./dist/data/languages.d.ts"
+            "import": {
+                "types": "./dist/data/languages.d.ts",
+                "default": "./dist/data/languages.module.js"
+            },
+            "require": {
+                "types": "./dist/data/languages.d.cts",
+                "default": "./dist/data/languages.cjs"
+            }
         },
         "./data/regions": {
-            "import": "./dist/data/regions.module.js",
-            "require": "./dist/data/regions.cjs",
-            "types": "./dist/data/regions.d.ts"
+            "import": {
+                "types": "./dist/data/regions.d.ts",
+                "default": "./dist/data/regions.module.js"
+            },
+            "require": {
+                "types": "./dist/data/regions.d.cts",
+                "default": "./dist/data/regions.cjs"
+            }
         },
         "./data/currency-symbol": {
-            "import": "./dist/data/currency-symbol.module.js",
-            "require": "./dist/data/currency-symbol.cjs",
-            "types": "./dist/data/currency-symbol.d.ts"
+            "import": {
+                "types": "./dist/data/currency-symbol.d.ts",
+                "default": "./dist/data/currency-symbol.module.js"
+            },
+            "require": {
+                "types": "./dist/data/currency-symbol.d.cts",
+                "default": "./dist/data/currency-symbol.cjs"
+            }
         },
         "./data/timezones": {
-            "import": "./dist/data/timezones.module.js",
-            "require": "./dist/data/timezones.cjs",
-            "types": "./dist/data/timezones.d.ts"
+            "import": {
+                "types": "./dist/data/timezones.d.ts",
+                "default": "./dist/data/timezones.module.js"
+            },
+            "require": {
+                "types": "./dist/data/timezones.d.cts",
+                "default": "./dist/data/timezones.cjs"
+            }
         }
     },
     "sideEffects": false,
@@ -71,9 +118,10 @@
         }
     },
     "scripts": {
-        "build": "rm -rf dist && tsc && npm run copy-data && npm run build-modules && npm run pack",
+        "build": "rm -rf dist && tsc && npm run copy-data && npm run build-modules && npm run copy-types && npm run pack",
         "copy-data": "cp src/data/*.js dist/data/",
         "build-modules": "cp src/data/*.module.js dist/data/",
+        "copy-types": "node scripts/copy-types.js",
         "pack": "rollup -c",
         "analyze": "rollup -c --environment ANALYZE:true",
         "tree-shaking-test": "rollup examples/tree-shaking.js -f esm -o dist/tree-shaking-example.js",
@@ -110,7 +158,7 @@
         "eslint-plugin-prettier": "^5.5.3",
         "husky": "^9.1.7",
         "lint-staged": "^16.1.2",
-        "mocha": "^11.8.0",
+        "mocha": "^11.0.0",
         "prettier": "^3.6.2",
         "rollup": "^4.60.1",
         "typescript": "^5.9.2"
